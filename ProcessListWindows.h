@@ -6,7 +6,7 @@
 #include <QString>
 #include <QStringList>
 #include <QMap>
-#include "Process.h"
+#include "ProcessList.h"
 
 #if defined(Q_OS_WIN)
 #include <windows.h>

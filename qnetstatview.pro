@@ -54,9 +54,9 @@ SOURCES += main.cpp \
     about.cpp \
     ProcessListWindows.cpp \
     ProcessListLinux.cpp \
-    Process.cpp \
     cthreadkillconnection.cpp \
-    setupUtiliteKill.cpp
+    setupUtiliteKill.cpp \
+    ProcessList.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -64,9 +64,9 @@ HEADERS += \
     about.h \
     ProcessListWindows.h \
     ProcessListLinux.h \
-    Process.h \
     cthreadkillconnection.h \
-    setupUtiliteKill.h
+    setupUtiliteKill.h \
+    ProcessList.h
 
 FORMS += \
     mainwindow.ui \

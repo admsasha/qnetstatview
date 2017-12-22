@@ -8,7 +8,7 @@
 #include <QTime>
 #include <QThread>
 
-#include "Process.h"
+#include "ProcessList.h"
 
 #if defined(Q_OS_LINUX) || defined(Q_OS_UNIX)
 #include "ProcessListLinux.h"

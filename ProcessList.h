@@ -1,5 +1,5 @@
-#ifndef PROCESS_H
-#define PROCESS_H
+#ifndef PROCESSLIST_H
+#define PROCESSLIST_H
 
 #include <QString>
 #include <QStringList>
@@ -25,9 +25,9 @@ struct sNetStat {
 
 
 
-class Process{
+class ProcessList{
     public:
-        Process();
+        ProcessList();
         static void killProcess(QString pid);
         static void closeConnection(QString from, QString to);
 };

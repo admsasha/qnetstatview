@@ -4,7 +4,7 @@
 #include <QString>
 #include <QStringList>
 #include <QMap>
-#include "Process.h"
+#include "ProcessList.h"
 
 
 class ProcessListLinux{

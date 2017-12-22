@@ -1,4 +1,4 @@
-#include "Process.h"
+#include "ProcessList.h"
 
 #include <QMessageBox>
 #include <QSettings>
@@ -21,16 +21,16 @@
 
 #include <QDebug>
 
-Process::Process(){
+ProcessList::ProcessList(){
 
 }
 
-void Process::killProcess(QString pid){
+void ProcessList::killProcess(QString pid){
 
-if (pid=="" or pid.toInt()==0){
-    QMessageBox::critical(0,"KillProcess",QObject::tr("You cannot kill this process"));
-    return;
-}
+    if (pid=="" or pid.toInt()==0){
+        QMessageBox::critical(0,"KillProcess",QObject::tr("You cannot kill this process"));
+        return;
+    }
 
 #if defined(Q_OS_LINUX) || defined(Q_OS_UNIX)
     if (kill(pid.toInt(),SIGTERM)){
@@ -48,7 +48,7 @@ if (pid=="" or pid.toInt()==0){
 }
 
 
-void Process::closeConnection(QString from, QString to){
+void ProcessList::closeConnection(QString from, QString to){
     QSettings conf(QDir::homePath()+"/.config/qnetstatview/qnetstatview.ini", QSettings::IniFormat);
     conf.setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
 

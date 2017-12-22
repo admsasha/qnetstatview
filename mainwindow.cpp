@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     qRegisterMetaType < QVector<sNetStat> > ("QVector<sNetStat>");
 
     // date start 19.02.2013
-    this->setWindowTitle("QNetStatView  v1.2.0 (20.12.2013)");
+    this->setWindowTitle("QNetStatView  v1.3.0 (22.12.2017)");
     this->setWindowIcon(QIcon(":qnetstatview.ico"));
 
     // Создание ContextMenu
@@ -128,7 +128,7 @@ void MainWindow::popupCustomMenu( const QPoint &pos ){
 }
 
 void MainWindow::killProcess(){
-    Process::killProcess(ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text());
+    ProcessList::killProcess(ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text());
 }
 
 void MainWindow::closeConnection(){
@@ -139,7 +139,7 @@ void MainWindow::closeConnection(){
 
     if (QDir::home().absolutePath()=="/root"){
         if (ui->tableWidget->item(ui->tableWidget->currentRow(),4)->text() == "ESTABLISHED"){
-            Process::closeConnection(ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text().split("/").at(0),ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text().split("/").at(1));
+            ProcessList::closeConnection(ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text().split("/").at(0),ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text().split("/").at(1));
         }else{
             QMessageBox::critical(0,"closeConnection",tr("Only ESTABLISHED"));
         }
@@ -207,7 +207,7 @@ void MainWindow::Resolve_Addresses(){
 
 void MainWindow::lookedUp(const QHostInfo &host){
     if (host.error() != QHostInfo::NoError) {
-        qDebug() << "Lookup failed:" << host.errorString();
+        //qDebug() << "Lookup failed:" << host.errorString();
         return;
     }
 
