@@ -300,8 +300,6 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
     int row=0;
     for (int i=0;i<newNetStat.size();i++){
-
-
         // filter prot
         if (newNetStat.at(i).prot=="TCP"){
             if (ui->actionTCP->isChecked()!=true) continue;
@@ -316,7 +314,7 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
         // filter state
         if (newNetStat.at(i).stat=="ESTABLISHED" or newNetStat.at(i).stat=="ESTABLISH"){
             if (ui->actionESTABLISHED->isChecked()!=true) continue;
-        }else if(newNetStat.at(i).stat=="LISTEN"){
+        }else if(newNetStat.at(i).stat=="LISTEN" or newNetStat.at(i).stat=="LISTENING"){
             if (ui->actionLISTEN->isChecked()!=true) continue;
         }else if(newNetStat.at(i).stat=="CLOSE"){
             if (ui->actionCLOSE->isChecked()!=true) continue;
@@ -324,11 +322,22 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
             if (ui->actionAllOther->isChecked()!=true) continue;
         }
 
-        ui->tableWidget->setRowCount(ui->tableWidget->rowCount()+1);
-
         QString local_address = newNetStat.at(i).local_address;
         QString rem_address = newNetStat.at(i).rem_address;
+        QString pid = newNetStat.at(i).process.pid;
 
+        if (!ui->lineEdit->text().isEmpty()){
+            if (ui->lineEdit->text()!=rem_address.split(":").at(0) and
+                ui->lineEdit->text()!=local_address.split(":").at(0) and
+                ui->lineEdit->text()!=pid and
+                newNetStat.at(i).process.program.indexOf(ui->lineEdit->text())==-1
+            ){
+                continue;
+            }
+        }
+
+
+        ui->tableWidget->setRowCount(ui->tableWidget->rowCount()+1);
 
         QTableWidgetItem *itemKey = new QTableWidgetItem(local_address+"/"+rem_address);
         ui->tableWidget->setItem(row, 0, itemKey);
@@ -367,9 +376,11 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
         QTableWidgetItem *itemProg = new QTableWidgetItem(newNetStat.at(i).process.program);
         ui->tableWidget->setItem(row, 6, itemProg);
+        ui->tableWidget->item(row,6)->setToolTip(itemProg->text());
 
         QTableWidgetItem *itemCmdLine = new QTableWidgetItem(newNetStat.at(i).process.cmdline);
         ui->tableWidget->setItem(row, 7, itemCmdLine);
+        ui->tableWidget->item(row,7)->setToolTip(itemCmdLine->text());
 
         for (int c=1;c<ui->tableWidget->columnCount();c++){
             if (newNetStat.at(i).operation==1){
@@ -386,7 +397,7 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
         ui->tableWidget->setRowHeight(row,18);
 
-        if (newNetStat.at(i).stat=="LISTEN") listen++;
+        if (newNetStat.at(i).stat=="LISTEN" or newNetStat.at(i).stat=="LISTENING") listen++;
         if (newNetStat.at(i).stat=="ESTABLISHED" or newNetStat.at(i).stat=="ESTABLISH") established++;
 
         row++;
@@ -396,13 +407,12 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
     ui->tableWidget->sortByColumn(sortcol);
     ui->tableWidget->verticalScrollBar()->setValue(saveScroll);
 
-    ui->label->setText(tr("Count connections: ")+QString::number(newNetStat.size()));
+    ui->label->setText(tr("Count connections: ")+QString::number(row));
     ui->label_2->setText(tr("Count LISTEN: ")+QString::number(listen));
     ui->label_3->setText(tr("Count ESTABLISHED: ")+QString::number(established));
 
 
-    ui->tableWidget->setColumnWidth(7,345);
-
+    //ui->tableWidget->setColumnWidth(7,345);
 }
 
 void MainWindow::timerUpdate_timeout(){

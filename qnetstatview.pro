@@ -33,6 +33,10 @@ unix {
     LIBS += -lresolv -lnsl -lrpcsvc  -L.
 }
 
+QMAKE_CXXFLAGS += -pedantic -pedantic-errors
+QMAKE_CXXFLAGS += -Wall -Wextra -Wformat -Wformat-security -Wno-unused-variable -Wno-unused-parameter
+
+
 exists(/usr/include/libnet.h) {
     DEFINES += USE_LIBNET
 
