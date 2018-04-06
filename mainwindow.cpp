@@ -64,7 +64,6 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     ui->tableWidget->setContextMenuPolicy( Qt::CustomContextMenu );
     ui->tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-
     ui->tableWidget->setColumnWidth(1,41);
     ui->tableWidget->setColumnWidth(2,160);
     ui->tableWidget->setColumnWidth(3,160);
@@ -276,12 +275,14 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
     QString key="";
     int listen=0;
     int established=0;
+    QMap<int,int> oldSizeCols;
 
     // Сохранение данных
     int saveScroll = ui->tableWidget->verticalScrollBar()->value();
     if (ui->tableWidget->currentRow()>0){
         key = ui->tableWidget->item(ui->tableWidget->currentRow(),2)->text() +"+"+ui->tableWidget->item(ui->tableWidget->currentRow(),3)->text();
     }
+    for (int i=0;i<ui->tableWidget->columnCount();i++) oldSizeCols[i]=ui->tableWidget->columnWidth(i);
 
     // Удаление старой таблицы
     ui->tableWidget->clear();
@@ -405,6 +406,8 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
     // Востанавливаем сортировку и позицию курсора
     ui->tableWidget->sortByColumn(sortcol);
     ui->tableWidget->verticalScrollBar()->setValue(saveScroll);
+
+    for (int i=0;i<ui->tableWidget->columnCount();i++) ui->tableWidget->setColumnWidth(i,oldSizeCols[i]);
 
     ui->label->setText(tr("Count connections: ")+QString::number(row));
     ui->label_2->setText(tr("Count LISTEN: ")+QString::number(listen));
