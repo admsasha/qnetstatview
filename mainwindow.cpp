@@ -20,12 +20,11 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     qRegisterMetaType < QVector<sNetStat> > ("QVector<sNetStat>");
 
     // date start 19.02.2013
-    this->setWindowTitle("QNetStatView  v1.3.0 (22.12.2017)");
+    this->setWindowTitle("QNetStatView  v1.4.0 (06.04.2018)");
     this->setWindowIcon(QIcon(":qnetstatview.ico"));
 
     // Создание ContextMenu
     initPopupMenu();
-
 
 
     connect(ui->tableWidget->verticalHeader(),SIGNAL(sectionResized(int,int,int)),this,SLOT(tableWidget_sectionVerticalResized(int,int,int)));
