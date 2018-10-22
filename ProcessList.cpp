@@ -34,7 +34,7 @@ void ProcessList::killProcess(QString pid){
 
 #if defined(Q_OS_LINUX) || defined(Q_OS_UNIX)
     if (kill(pid.toInt(),SIGTERM)){
-        QMessageBox::critical(0,"KillProcess",QObject::tr("kill process was not successful"));
+        QMessageBox::critical(0,"KillProcess",QObject::tr("Killing of process was not successful"));
     }
 #elif defined(Q_OS_WIN)
     HANDLE tmpHandle = OpenProcess(PROCESS_ALL_ACCESS, TRUE, pid.toInt());
@@ -42,7 +42,7 @@ void ProcessList::killProcess(QString pid){
         TerminateProcess(tmpHandle, 0);
     }
 #else
-    QMessageBox::critical(0,"KillProcess",QObject::tr("Your OS is not support killProcess"));
+    QMessageBox::critical(0,"KillProcess",QObject::tr("Your OS does not support killProcess"));
 #endif
 
 }
@@ -65,9 +65,9 @@ void ProcessList::closeConnection(QString from, QString to){
             cc->init("eth0",filter);
             cc->start();
         #elif defined(Q_OS_WIN)
-            QMessageBox::critical(0,"closeConnection",QObject::tr("Your OS is not support closeConnection"));
+            QMessageBox::critical(0,"closeConnection",QObject::tr("Your OS does not support closeConnection"));
         #else
-            QMessageBox::critical(0,"closeConnection",QObject::tr("Your OS is not support closeConnection"));
+            QMessageBox::critical(0,"closeConnection",QObject::tr("Your OS does not support closeConnection"));
         #endif
     }else{
         QStringList fromList = from.split(":");
