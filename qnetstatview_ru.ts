@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru_RU">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>About</name>
     <message>
         <location filename="about.ui" line="14"/>
         <source>About...</source>
-        <translation type="unfinished"></translation>
+        <translation>О программе...</translation>
     </message>
     <message>
         <location filename="about.ui" line="26"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <location filename="about.ui" line="49"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="about.ui" line="71"/>
         <source>19.02.2013</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="about.cpp" line="8"/>
         <source>QNetStatView - program that will show you detailed listings of all TCP and UDP endpoints on your system, including the local and remote addresses and state of TCP connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>QNetStatView - программа, которая покажет вам подробные списки всех конечных точек TCP и UDP в вашей системе, включая локальные и удалённые адреса и состояние TCP-соединений.</translation>
     </message>
     <message>
         <location filename="about.cpp" line="9"/>
         <source>The program is distributed under the GPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>Программа распространяется под лицензией GPLv3</translation>
     </message>
 </context>
 <context>
@@ -39,278 +39,289 @@
     <message>
         <location filename="mainwindow.ui" line="14"/>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="61"/>
-        <location filename="mainwindow.cpp" line="288"/>
-        <source>prot</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="66"/>
-        <source>local_address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="71"/>
-        <source>rem_address</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="76"/>
-        <location filename="mainwindow.cpp" line="288"/>
-        <source>state</source>
-        <translation type="unfinished"></translation>
+        <location filename="mainwindow.cpp" line="299"/>
+        <source>prot</source>
+        <translation>протокол</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="81"/>
-        <location filename="mainwindow.cpp" line="288"/>
-        <source>pid</source>
-        <translation type="unfinished"></translation>
+        <source>local_address</source>
+        <translation>лок_адрес</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="86"/>
-        <source>programm</source>
-        <translation type="unfinished"></translation>
+        <source>rem_address</source>
+        <translation>удал_адрес</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="91"/>
-        <location filename="mainwindow.cpp" line="288"/>
+        <location filename="mainwindow.cpp" line="299"/>
+        <source>state</source>
+        <translation>статус</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="96"/>
+        <location filename="mainwindow.cpp" line="299"/>
+        <source>pid</source>
+        <translation>ид_процесса</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="101"/>
+        <location filename="mainwindow.cpp" line="299"/>
+        <source>program</source>
+        <oldsource>programm</oldsource>
+        <translation>программа</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="106"/>
+        <location filename="mainwindow.cpp" line="299"/>
         <source>cmdline</source>
-        <translation type="unfinished"></translation>
+        <translation>ком_строка</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="24"/>
-        <location filename="mainwindow.ui" line="34"/>
-        <location filename="mainwindow.ui" line="44"/>
+        <location filename="mainwindow.ui" line="39"/>
+        <location filename="mainwindow.ui" line="49"/>
+        <location filename="mainwindow.ui" line="59"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="109"/>
+        <location filename="mainwindow.ui" line="135"/>
+        <source>Filter:</source>
+        <translation>Фильтр:</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="166"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="119"/>
+        <location filename="mainwindow.ui" line="176"/>
         <source>Help</source>
         <translation>Помощь</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="125"/>
+        <location filename="mainwindow.ui" line="182"/>
         <source>View</source>
         <translation>Просмотр</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="129"/>
+        <location filename="mainwindow.ui" line="186"/>
         <source>Update speed</source>
         <translation>Скорость обновления</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="141"/>
+        <location filename="mainwindow.ui" line="198"/>
         <source>Options</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="145"/>
+        <location filename="mainwindow.ui" line="202"/>
         <source>Prot</source>
-        <translation type="unfinished">Протокол</translation>
+        <translation>Протокол</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="154"/>
+        <location filename="mainwindow.ui" line="211"/>
         <source>State</source>
-        <translation type="unfinished">Статус</translation>
+        <translation>Статус</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="172"/>
+        <location filename="mainwindow.ui" line="230"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="177"/>
+        <location filename="mainwindow.ui" line="235"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="180"/>
+        <location filename="mainwindow.ui" line="238"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="185"/>
+        <location filename="mainwindow.ui" line="243"/>
         <source>Refresh Now</source>
         <translation>Обновить</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="188"/>
+        <location filename="mainwindow.ui" line="246"/>
         <source>F5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="199"/>
+        <location filename="mainwindow.ui" line="257"/>
         <source>1 second</source>
         <translation>1 секунда</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="202"/>
+        <location filename="mainwindow.ui" line="260"/>
         <source>Alt+1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="213"/>
+        <location filename="mainwindow.ui" line="271"/>
         <source>3 second</source>
         <translation>3 секунды</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="216"/>
+        <location filename="mainwindow.ui" line="274"/>
         <source>Alt+2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="224"/>
+        <location filename="mainwindow.ui" line="282"/>
         <source>5 second</source>
         <translation>5 секунд</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="227"/>
+        <location filename="mainwindow.ui" line="285"/>
         <source>Alt+3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="238"/>
+        <location filename="mainwindow.ui" line="296"/>
         <source>Pause</source>
         <translation>Пауза</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="241"/>
+        <location filename="mainwindow.ui" line="299"/>
         <source>Alt+0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="246"/>
+        <location filename="mainwindow.ui" line="304"/>
         <source>Save As...</source>
         <translation>Сохранить как...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="251"/>
+        <location filename="mainwindow.ui" line="309"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="256"/>
+        <location filename="mainwindow.ui" line="314"/>
         <source>Restart as Root</source>
         <translation>Перегрузиться под root</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="264"/>
+        <location filename="mainwindow.ui" line="322"/>
         <source>Resolve Addresses</source>
         <translation>Резольвить адреса</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="275"/>
+        <location filename="mainwindow.ui" line="333"/>
         <source>TCP</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="286"/>
+        <location filename="mainwindow.ui" line="344"/>
         <source>UDP</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="297"/>
+        <location filename="mainwindow.ui" line="355"/>
         <source>TCP6</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="308"/>
+        <location filename="mainwindow.ui" line="366"/>
         <source>UDP6</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="319"/>
+        <location filename="mainwindow.ui" line="377"/>
         <source>CLOSE</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="330"/>
+        <location filename="mainwindow.ui" line="388"/>
         <source>ESTABLISHED</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="341"/>
+        <location filename="mainwindow.ui" line="399"/>
         <source>LISTEN</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="352"/>
+        <location filename="mainwindow.ui" line="410"/>
         <source>All other</source>
-        <translation type="unfinished"></translation>
+        <translation>Все другие</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="111"/>
+        <location filename="mainwindow.ui" line="415"/>
+        <source>Utilite for kill...</source>
+        <translation>Утилита для убиения...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="120"/>
         <source>Kill process</source>
-        <translation type="unfinished">Убить процесс</translation>
+        <translation>Убить процесс</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="112"/>
+        <location filename="mainwindow.cpp" line="121"/>
         <source>Close connection</source>
-        <translation type="unfinished">Закрыть подключение</translation>
+        <translation>Закрыть подключение</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="125"/>
         <source>Your OS is not support closeConnection</source>
-        <translation type="unfinished">Ваша OS не поддерживает закрытие сокета</translation>
+        <translation type="obsolete">Ваша OS не поддерживает закрытие сокета</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="133"/>
+        <location filename="mainwindow.cpp" line="134"/>
+        <source>Your OS does not support closeConnection</source>
+        <translation>Ваша OS не поддерживает закрытие сокета</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="142"/>
         <source>Only ESTABLISHED</source>
-        <translation type="unfinished">Только ESTABLISHED</translation>
+        <translation>Только ESTABLISHED</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="136"/>
+        <location filename="mainwindow.cpp" line="145"/>
         <source>Only root can do this</source>
-        <translation type="unfinished">Только root может сделать это</translation>
+        <translation>Только root может сделать это</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="173"/>
+        <location filename="mainwindow.cpp" line="182"/>
         <source>Save to file</source>
         <translation>Сохранить в файл</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="173"/>
+        <location filename="mainwindow.cpp" line="182"/>
         <source>All Files (*.*)</source>
         <translation>Все файлы (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="288"/>
+        <location filename="mainwindow.cpp" line="299"/>
         <source>local address</source>
-        <translation>Локальный адрес</translation>
+        <translation>локальный адрес</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="288"/>
+        <location filename="mainwindow.cpp" line="299"/>
         <source>rem address</source>
-        <translation>Удаленный адрес</translation>
+        <translation>удалённый адрес</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="288"/>
-        <source>program</source>
-        <translation>Программа</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="388"/>
+        <location filename="mainwindow.cpp" line="412"/>
         <source>Count connections: </source>
         <translation>Количество подключений: </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="389"/>
+        <location filename="mainwindow.cpp" line="413"/>
         <source>Count LISTEN: </source>
         <translation>Количество LISTEN: </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="390"/>
+        <location filename="mainwindow.cpp" line="414"/>
         <source>Count ESTABLISHED: </source>
-        <translation>Количество ESTABLISHED:</translation>
+        <translation>Количество ESTABLISHED: </translation>
     </message>
 </context>
 <context>
@@ -327,25 +338,93 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="Process.cpp" line="29"/>
+        <location filename="ProcessList.cpp" line="31"/>
         <source>You cannot kill this process</source>
-        <translation type="unfinished">Вы не можете убить этот процесс</translation>
+        <translation>Вы не можете убить этот процесс</translation>
     </message>
     <message>
-        <location filename="Process.cpp" line="35"/>
+        <location filename="ProcessList.cpp" line="37"/>
+        <source>Killing of process was not successful</source>
+        <translation>Убийство процесса не прошло успешно</translation>
+    </message>
+    <message>
+        <location filename="ProcessList.cpp" line="45"/>
+        <source>Your OS does not support killProcess</source>
+        <translation>Ваша OS не поддерживает убиение процесса</translation>
+    </message>
+    <message>
+        <location filename="ProcessList.cpp" line="68"/>
+        <location filename="ProcessList.cpp" line="70"/>
+        <source>Your OS does not support closeConnection</source>
+        <translation>Ваша OS не поддерживает закрытие сокета</translation>
+    </message>
+    <message>
         <source>kill process was not successful</source>
-        <translation type="unfinished">Операция не прошла успешно</translation>
+        <translation type="obsolete">Операция не прошла успешно</translation>
     </message>
     <message>
-        <location filename="Process.cpp" line="43"/>
         <source>Your OS is not support killProcess</source>
-        <translation type="unfinished">Ваша OS не поддерживает закрытие процесса</translation>
+        <translation type="obsolete">Ваша OS не поддерживает закрытие процесса</translation>
     </message>
     <message>
-        <location filename="Process.cpp" line="60"/>
-        <location filename="Process.cpp" line="62"/>
         <source>Your OS is not support closeConnection</source>
-        <translation type="unfinished">Ваша OS не поддерживает закрытие сокета</translation>
+        <translation type="obsolete">Ваша OS не поддерживает закрытие сокета</translation>
+    </message>
+</context>
+<context>
+    <name>setupUtiliteKill</name>
+    <message>
+        <location filename="setupUtiliteKill.ui" line="14"/>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+    <message>
+        <location filename="setupUtiliteKill.ui" line="36"/>
+        <source>If the field is empty applies integrated solution.
+
+Args for program
+ %REMOTE_IP% - Remote IP 
+ %REMOTE_PORT% - Remote PORT
+ %LOCAL_IP% - Local IP 
+ %LOCAL_PORT% - Local PORT
+</source>
+        <oldsource>If the field is empty applies integrated solution.
+
+Args for programm
+ %REMOTE_IP% - Remote IP 
+ %REMOTE_PORT% - Remote PORT
+ %LOCAL_IP% - Local IP 
+ %LOCAL_PORT% - Local PORT
+</oldsource>
+        <translation>Если поле пустое, то применяется интегрированное решение..
+
+Аргументы для программы
+ %REMOTE_IP% - Удалённый IP 
+ %REMOTE_PORT% - Удалённый порт
+ %LOCAL_IP% - Локальный IP 
+ %LOCAL_PORT% - Локальный порт
+</translation>
+    </message>
+    <message>
+        <location filename="setupUtiliteKill.ui" line="64"/>
+        <source>Kill program:</source>
+        <oldsource>Kill programm:</oldsource>
+        <translation>Программа для убиения:</translation>
+    </message>
+    <message>
+        <location filename="setupUtiliteKill.ui" line="77"/>
+        <source>Apply</source>
+        <translation>Применить</translation>
+    </message>
+    <message>
+        <location filename="setupUtiliteKill.ui" line="95"/>
+        <source>Utilite for close connection</source>
+        <translation>Утилита для закрытия соединения</translation>
+    </message>
+    <message>
+        <location filename="setupUtiliteKill.ui" line="111"/>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
     </message>
 </context>
 </TS>

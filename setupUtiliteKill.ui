@@ -35,7 +35,7 @@
    <property name="text">
     <string>If the field is empty applies integrated solution.
 
-Args for programm
+Args for program
  %REMOTE_IP% - Remote IP 
  %REMOTE_PORT% - Remote PORT
  %LOCAL_IP% - Local IP 
@@ -61,7 +61,7 @@ Args for programm
     </font>
    </property>
    <property name="text">
-    <string>Kill programm:</string>
+    <string>Kill program:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
