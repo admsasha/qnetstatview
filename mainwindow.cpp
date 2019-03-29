@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     qRegisterMetaType < QVector<sNetStat> > ("QVector<sNetStat>");
 
     // date start 19.02.2013
-    this->setWindowTitle("QNetStatView  v1.4.0 (06.04.2018)");
+    this->setWindowTitle("QNetStatView  v1.4.1 (29.03.2019)");
     this->setWindowIcon(QIcon(":qnetstatview.ico"));
 
     // Создание ContextMenu
