@@ -72,6 +72,8 @@ QString  ProcessListWindows::getProgram(QString pid){
 
 #if defined(Q_OS_WIN)
     HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, false, iPID);
+    if (hProcess==NULL) return "-";
+
     WCHAR szFilePath[MAX_PATH] = {0};
     GetModuleFileNameEx(hProcess, NULL, szFilePath, MAX_PATH);
     CloseHandle(hProcess);
