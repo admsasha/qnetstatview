@@ -16,7 +16,7 @@ BOOL ProcessListWindows::GetProcessCmdLine(DWORD dwId,LPWSTR wBuf,DWORD dwBufLen
     PROCESS_BASIC_INFORMATION pbi;
     PEB                       Peb;
     PROCESS_PARAMETERS        ProcParam;
-    DWORD                     dwDummy;
+    SIZE_T                    dwDummy;
     DWORD                     dwSize;
     LPVOID                    lpAddress;
     BOOL                      bRet = FALSE;
