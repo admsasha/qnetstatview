@@ -67,15 +67,15 @@ updateqm.CONFIG += no_link target_predeps
 QMAKE_EXTRA_COMPILERS += updateqm
 
 data_bin.path = /usr/bin/
-data_bin.files = Bin/informer-version-apps
+data_bin.files = Bin/qnetstatview
 INSTALLS += data_bin
 
 data_app.path = /usr/share/applications/
-data_app.files = pkg/informer-version-apps.desktop
+data_app.files = pkg/qnetstatview.desktop
 INSTALLS += data_app
 
 data_pixmaps.path = /usr/share/pixmaps/
-data_pixmaps.files = pkg/informer-version-apps.png
+data_pixmaps.files = images/qnetstatview.png
 INSTALLS += data_pixmaps
 
 data_langs.path = $$PATH_USERDATA/langs/

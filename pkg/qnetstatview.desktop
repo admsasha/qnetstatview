@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=QNetStatView
+Comment=Shows detailed listings of all TCP and UDP endpoints
+Icon=qnetstatview
+Exec=qnetstatview
+Terminal=false
+Categories=Network;Utility;
