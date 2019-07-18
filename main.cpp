@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
     QTranslator translator;
     QString locale = QLocale::system().name();
 
-    translator.load(QString(PATH_USERDATA)+QString("/qnetstatview_") + locale);
+    translator.load(QString(PATH_USERDATA)+QString("/langs/qnetstatview_") + locale);
     app.installTranslator(&translator);
 
     //set translator for default widget's text (for example: QMessageBox's buttons)
