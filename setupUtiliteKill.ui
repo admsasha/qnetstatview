@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>451</width>
-    <height>255</height>
+    <height>205</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,9 +30,7 @@
    <item row="6" column="0" colspan="4">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>If the field is empty applies integrated solution.
-
-Args for program
+      <string>Args for program
  %REMOTE_IP% - Remote IP 
  %REMOTE_PORT% - Remote PORT
  %LOCAL_IP% - Local IP 
@@ -62,7 +60,7 @@ Args for program
       <string>Utilite for close connection</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignHCenter|Qt::AlignTop</set>
      </property>
     </widget>
    </item>
