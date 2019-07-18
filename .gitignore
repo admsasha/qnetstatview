@@ -33,5 +33,6 @@
 /Bin/
 /.build/
 /.qmake.stash
+/langs/*.qm
 /Makefile
 /qnetstatview.pro.user
