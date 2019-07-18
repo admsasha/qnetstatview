@@ -11,6 +11,9 @@
 #include <QSettings>
 #include <QDir>
 
+#include "FormAbout.h"
+#include "config_qnetstatview.h"
+
 Q_DECLARE_METATYPE(QVector<sNetStat>)
 
 
@@ -20,8 +23,9 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     qRegisterMetaType < QVector<sNetStat> > ("QVector<sNetStat>");
 
     // date start 19.02.2013
-    this->setWindowTitle("QNetStatView  v1.4.1 (29.03.2019)");
-    this->setWindowIcon(QIcon(":qnetstatview.ico"));
+    this->setWindowTitle(QString("QNetStatView  %1 (%2)").arg(QNETSTATVIEW_VERSION).arg(QNETSTATVIEW_DATEBUILD));
+    this->setWindowIcon(QIcon(QString(PATH_USERDATA)+"/images/qnetstatview.png"));
+
 
     // Создание ContextMenu
     initPopupMenu();
@@ -161,7 +165,7 @@ void MainWindow::tableWidget_sectionHorizontalResized( int logicalIndex, int old
 
 
 void MainWindow::showAbout(){
-    About form;
+    FormAbout form(this);
     form.exec();
 }
 

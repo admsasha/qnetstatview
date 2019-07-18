@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QSettings>
 #include <QDir>
+#include <QStandardPaths>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -48,7 +49,7 @@ void ProcessList::killProcess(QString pid){
 
 
 void ProcessList::closeConnection(QString from, QString to){
-    QSettings conf(QDir::homePath()+"/.config/qnetstatview/qnetstatview.ini", QSettings::IniFormat);
+    QSettings conf(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)+"/qnetstatview.ini", QSettings::IniFormat);
     conf.setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
 
     QString utiliteProcKill=conf.value("General/prockill","").toString();

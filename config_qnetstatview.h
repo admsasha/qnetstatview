@@ -1,0 +1,7 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define QNETSTATVIEW_VERSION "1.5.0"
+#define QNETSTATVIEW_DATEBUILD "18.07.2019"
+
+#endif // CONFIG_H

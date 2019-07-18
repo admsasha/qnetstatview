@@ -13,15 +13,20 @@ UI_DIR = .build
 RCC_DIR = .build
 
 DESTDIR = Bin
-QT += network
-TRANSLATIONS = qnetstatview_ru.ts
+QT += network widgets
 
 RESOURCES += qnetstatview.qrc
 
-greaterThan(QT_MAJOR_VERSION, 4) {
-  QT += widgets
-  DEFINES += HAVE_QT5
+isEmpty(PATH_USERDATA){
+    win32: PATH_USERDATA=.
+    unix:  PATH_USERDATA=/usr/share/qnetstatview
 }
+
+message("Set PATH_USERDATA:" $$PATH_USERDATA)
+DEFINES += PATH_USERDATA="\\\""$$PATH_USERDATA"\\\""
+
+TRANSLATIONS = qnetstatview_ru.ts
+
 
 
 win32 {
@@ -41,22 +46,23 @@ QMAKE_CXXFLAGS += -Wall -Wextra -Wformat -Wformat-security -Wno-unused-variable 
 SOURCES += main.cpp \
     mainwindow.cpp \
     cNetStat.cpp \
-    about.cpp \
     ProcessListWindows.cpp \
     ProcessListLinux.cpp \
     setupUtiliteKill.cpp \
-    ProcessList.cpp
+    ProcessList.cpp \
+    FormAbout.cpp
 
 HEADERS += \
     mainwindow.h \
     cNetStat.h \
-    about.h \
     ProcessListWindows.h \
     ProcessListLinux.h \
     setupUtiliteKill.h \
-    ProcessList.h
+    ProcessList.h \
+    FormAbout.h \
+    config_qnetstatview.h
 
 FORMS += \
     mainwindow.ui \
-    about.ui \
-    setupUtiliteKill.ui
+    setupUtiliteKill.ui \
+    FormAbout.ui

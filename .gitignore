@@ -31,4 +31,7 @@
 
 /0000/
 /Bin/
+/.build/
+/.qmake.stash
+/Makefile
 /qnetstatview.pro.user

@@ -3,17 +3,19 @@
 #include <QDir>
 #include <QFile>
 #include <QSettings>
+#include <QStandardPaths>
 
 setupUtiliteKill::setupUtiliteKill(QWidget *parent) : QDialog(parent),  ui(new Ui::setupUtiliteKill){
     ui->setupUi(this);
 
-    this->setWindowTitle("Utilite for close connection");
+    this->setWindowTitle(tr("Utilite for close connection"));
     this->setFixedSize(this->width(),this->height());
+    this->setWindowIcon(QIcon(QString(PATH_USERDATA)+"/images/qnetstatview.png"));
 
     connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(hide()));
     connect(ui->pushButton_2,SIGNAL(clicked()),this,SLOT(actionApply()));
 
-    QSettings conf(QDir::homePath()+"/.config/qnetstatview/qnetstatview.ini", QSettings::IniFormat);
+    QSettings conf(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)+"/qnetstatview.ini", QSettings::IniFormat);
     conf.setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
 
     ui->lineEdit->setText(conf.value("General/prockill","").toString());
@@ -26,7 +28,7 @@ setupUtiliteKill::~setupUtiliteKill(){
 
 void setupUtiliteKill::actionApply(){
 
-    QSettings conf(QDir::homePath()+"/.config/qnetstatview/qnetstatview.ini", QSettings::IniFormat);
+    QSettings conf(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)+"/qnetstatview.ini", QSettings::IniFormat);
     conf.setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
 
     conf.setValue("General/prockill",ui->lineEdit->text());

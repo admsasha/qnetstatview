@@ -7,7 +7,6 @@
 #include <QVector>
 
 #include "cNetStat.h"
-#include "about.h"
 #include "setupUtiliteKill.h"
 
 

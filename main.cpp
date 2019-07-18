@@ -4,8 +4,11 @@
 #include <QLocale>
 #include <QString>
 #include <QLibraryInfo>
+#include <QDir>
+#include <QStandardPaths>
 
 #include "mainwindow.h"
+#include "config_qnetstatview.h"
 
 #if defined(Q_OS_WIN)
 bool SetDebugPrivileges(){
@@ -34,18 +37,20 @@ bool SetDebugPrivileges(){
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
      
-#ifndef HAVE_QT5
+    QCoreApplication::setOrganizationName("DanSoft");
+    QCoreApplication::setOrganizationDomain("dansoft.ru");
+    QCoreApplication::setApplicationVersion(QNETSTATVIEW_VERSION);
+    QCoreApplication::setApplicationName("QNetStatView");
+
+    QDir dirConfig(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation));
+    if (dirConfig.exists()==false) dirConfig.mkpath(dirConfig.path());
+
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF8"));
-    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF8"));
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF8"));
-#endif
 
     QTranslator translator;
     QString locale = QLocale::system().name();
 
-    if (translator.load(QString("qnetstatview_") + locale)==false){
-        translator.load(QString("/usr/share/qnetstatview/qnetstatview_") + locale);
-    }
+    translator.load(QString(PATH_USERDATA)+QString("/qnetstatview_") + locale);
     app.installTranslator(&translator);
 
     //set translator for default widget's text (for example: QMessageBox's buttons)
