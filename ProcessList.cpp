@@ -11,7 +11,6 @@
 #if defined(Q_OS_LINUX) || defined(Q_OS_UNIX)
 #include <signal.h>
 #include <sys/wait.h>
-#include "cthreadkillconnection.h"
 #endif
 
 #if defined(Q_OS_WIN)
@@ -55,20 +54,7 @@ void ProcessList::closeConnection(QString from, QString to){
     QString utiliteProcKill=conf.value("General/prockill","").toString();
 
     if (utiliteProcKill==""){
-        #if defined(Q_OS_LINUX) || defined(Q_OS_UNIX)
-            QString filter="";
-            QStringList fromList = from.split(":");
-            QStringList toList = to.split(":");
-            filter="host "+fromList.at(0)+" and host "+toList.at(0)+" and port "+fromList.at(1)+" and port "+toList.at(1);
-
-            cThreadKillConnection *cc = new cThreadKillConnection();
-            cc->init("eth0",filter);
-            cc->start();
-        #elif defined(Q_OS_WIN)
-            QMessageBox::critical(0,"closeConnection",QObject::tr("Your OS does not support closeConnection"));
-        #else
-            QMessageBox::critical(0,"closeConnection",QObject::tr("Your OS does not support closeConnection"));
-        #endif
+        QMessageBox::critical(0,"closeConnection",QObject::tr("set utilites for kill connections"));
     }else{
         QStringList fromList = from.split(":");
         QStringList toList = to.split(":");

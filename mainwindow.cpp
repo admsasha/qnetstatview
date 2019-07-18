@@ -130,7 +130,7 @@ void MainWindow::killProcess(){
 }
 
 void MainWindow::closeConnection(){
-#if defined(Q_OS_WIN) || !defined(USE_LIBNET)
+#if defined(Q_OS_WIN)
     QMessageBox::critical(0,"closeConnection",tr("Your OS does not support closeConnection"));
     return;
 #endif

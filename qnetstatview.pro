@@ -30,26 +30,12 @@ win32 {
 }
 
 unix {
-    LIBS += -lresolv -lnsl -lrpcsvc  -L.
+
 }
 
 QMAKE_CXXFLAGS += -pedantic -pedantic-errors
 QMAKE_CXXFLAGS += -Wall -Wextra -Wformat -Wformat-security -Wno-unused-variable -Wno-unused-parameter
 
-
-exists(/usr/include/libnet.h) {
-    DEFINES += USE_LIBNET
-
-    SOURCES +=     tcpkill/tcpkill.cpp \
-        tcpkill/pcaputil.cpp
-
-    HEADERS += \
-        tcpkill/pcaputil.h \
-        tcpkill/tcpkill.h \
-
-    LIBS +=  -lpcap -lnet
-
-}
 
 # Input
 SOURCES += main.cpp \
@@ -58,7 +44,6 @@ SOURCES += main.cpp \
     about.cpp \
     ProcessListWindows.cpp \
     ProcessListLinux.cpp \
-    cthreadkillconnection.cpp \
     setupUtiliteKill.cpp \
     ProcessList.cpp
 
@@ -68,7 +53,6 @@ HEADERS += \
     about.h \
     ProcessListWindows.h \
     ProcessListLinux.h \
-    cthreadkillconnection.h \
     setupUtiliteKill.h \
     ProcessList.h
 
