@@ -63,6 +63,19 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     connect(ui->actionPause,SIGNAL(triggered()),this,SLOT(timer_pause()));
 
 
+    ui->tableWidget->clear();
+    ui->tableWidget->setRowCount(0);
+
+    // Формирование новой таблицы
+    ui->tableWidget->verticalHeader()->hide();
+    //ui->tableWidget->setRowCount(newNetStat.size());
+    ui->tableWidget->setColumnCount(8);
+    ui->tableWidget->sortByColumn(1);
+    ui->tableWidget->setColumnHidden(0,true);
+
+    ui->tableWidget->setHorizontalHeaderLabels(QStringList() << "" << tr("prot") << tr("local address") << tr("rem address") << tr("state") << tr("pid") << tr("program") << tr("cmdline"));
+
+
     ui->tableWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableWidget->setContextMenuPolicy( Qt::CustomContextMenu );
@@ -277,30 +290,19 @@ void MainWindow::restartAsRoot(){
 void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
     QString key="";
+    QString key_scroll="";
     int listen=0;
     int established=0;
     QMap<int,int> oldSizeCols;
 
-    // Сохранение данных
-    int saveScroll = ui->tableWidget->verticalScrollBar()->value();
     if (ui->tableWidget->currentRow()>0){
         key = ui->tableWidget->item(ui->tableWidget->currentRow(),2)->text() +"+"+ui->tableWidget->item(ui->tableWidget->currentRow(),3)->text();
+        key_scroll = ui->tableWidget->item(ui->tableWidget->verticalScrollBar()->value(),2)->text()+"+"+ui->tableWidget->item(ui->tableWidget->verticalScrollBar()->value(),3)->text();
     }
     for (int i=0;i<ui->tableWidget->columnCount();i++) oldSizeCols[i]=ui->tableWidget->columnWidth(i);
 
-    // Удаление старой таблицы
-    ui->tableWidget->clear();
+
     ui->tableWidget->setRowCount(0);
-
-
-    // Формирование новой таблицы
-    ui->tableWidget->verticalHeader()->hide();
-    //ui->tableWidget->setRowCount(newNetStat.size());
-    ui->tableWidget->setColumnCount(8);
-    ui->tableWidget->sortByColumn(1);
-    ui->tableWidget->setColumnHidden(0,true);
-
-    ui->tableWidget->setHorizontalHeaderLabels(QStringList() << "" << tr("prot") << tr("local address") << tr("rem address") << tr("state") << tr("pid") << tr("program") << tr("cmdline"));
 
     int row=0;
     for (int i=0;i<newNetStat.size();i++){
@@ -407,9 +409,15 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
         row++;
     }
 
-    // Востанавливаем сортировку и позицию курсора
+
+    // Sorting and restoring the cursor position
     ui->tableWidget->sortByColumn(sortcol);
-    ui->tableWidget->verticalScrollBar()->setValue(saveScroll);
+
+    for (int tableRow=0;tableRow<ui->tableWidget->rowCount();tableRow++){
+        if (key_scroll==ui->tableWidget->item(tableRow,2)->text()+"+"+ui->tableWidget->item(tableRow,3)->text()){
+            ui->tableWidget->verticalScrollBar()->setValue(tableRow);
+        }
+    }
 
     for (int i=0;i<ui->tableWidget->columnCount();i++) ui->tableWidget->setColumnWidth(i,oldSizeCols[i]);
 
