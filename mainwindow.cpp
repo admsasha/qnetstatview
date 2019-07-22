@@ -209,7 +209,7 @@ void MainWindow::killProcess(){
 
 void MainWindow::closeConnection(){
 #if defined(Q_OS_WIN)
-    QMessageBox::critical(this,"closeConnection",tr("Your OS does not support closeConnection"));
+    QMessageBox::critical(this,tr("close connection"),tr("Your OS does not support close connection"));
     return;
 #endif
 
@@ -217,10 +217,10 @@ void MainWindow::closeConnection(){
         if (ui->tableWidget->item(ui->tableWidget->currentRow(),4)->text() == "ESTABLISHED"){
             ProcessList::closeConnection(ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text().split("/").at(0),ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text().split("/").at(1));
         }else{
-            QMessageBox::critical(this,"closeConnection",tr("Only ESTABLISHED"));
+            QMessageBox::critical(this,tr("close connection"),tr("Only ESTABLISHED"));
         }
     }else{
-        QMessageBox::critical(this,"closeConnection",tr("Only root can do this"));
+        QMessageBox::critical(this,tr("close connection"),tr("Only root can do this"));
     }
 }
 
