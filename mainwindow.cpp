@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include <QDebug>
 #include <QFile>
 #include <QScrollBar>
@@ -30,9 +31,6 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     // Создание ContextMenu
     initPopupMenu();
 
-
-    connect(ui->tableWidget->verticalHeader(),SIGNAL(sectionResized(int,int,int)),this,SLOT(tableWidget_sectionVerticalResized(int,int,int)));
-    connect(ui->tableWidget->horizontalHeader(),SIGNAL(sectionResized(int,int,int)),this,SLOT(tableWidget_sectionHorizontalResized(int,int,int)));
     connect(ui->tableWidget->horizontalHeader(),SIGNAL(sectionClicked(int)),this,SLOT(tableWidget_sectionClicked(int)));
     connect(ui->tableWidget, SIGNAL( customContextMenuRequested( const QPoint & ) ), SLOT( popupCustomMenu( const QPoint & ) ) );
 
@@ -66,9 +64,8 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     ui->tableWidget->clear();
     ui->tableWidget->setRowCount(0);
 
-    // Формирование новой таблицы
+    // init tableWidget
     ui->tableWidget->verticalHeader()->hide();
-    //ui->tableWidget->setRowCount(newNetStat.size());
     ui->tableWidget->setColumnCount(8);
     ui->tableWidget->sortByColumn(1);
     ui->tableWidget->setColumnHidden(0,true);
@@ -86,10 +83,6 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     ui->tableWidget->setColumnWidth(3,160);
     ui->tableWidget->setColumnWidth(5,45);
     ui->tableWidget->setColumnWidth(7,345);
-    //ui->tableWidget->horizontalHeader()->setResizeMode(0,QHeaderView::ResizeToContents);
-    //ui->tableWidget->horizontalHeader()->setResizeMode(4,QHeaderView::ResizeToContents);
-    //ui->tableWidget->horizontalHeader()->setResizeMode(5,QHeaderView::ResizeToContents);
-    //ui->tableWidget->horizontalHeader()->setSectionResizeMode(7,QHeaderView::ResizeToContents);
 
 
 #if defined(Q_OS_LINUX) || defined(Q_OS_UNIX)
@@ -167,15 +160,6 @@ void MainWindow::tableWidget_sectionClicked(int col){
     sortcol=col;
     timerUpdate_timeout();
 }
-
-void MainWindow::tableWidget_sectionVerticalResized( int logicalIndex, int oldSize, int newSize){
-    //qDebug() << logicalIndex << oldSize << newSize;
-}
-
-void MainWindow::tableWidget_sectionHorizontalResized( int logicalIndex, int oldSize, int newSize){
-    //qDebug() << logicalIndex << oldSize << newSize;
-}
-
 
 void MainWindow::showAbout(){
     FormAbout form(this);
