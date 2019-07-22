@@ -18,7 +18,7 @@ setupUtiliteKill::setupUtiliteKill(QWidget *parent) : QDialog(parent),  ui(new U
     QSettings conf(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)+"/qnetstatview.ini", QSettings::IniFormat);
     conf.setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
 
-    ui->lineEdit->setText(conf.value("General/prockill","").toString());
+    ui->lineEdit->setText(conf.value("setup/prockill","").toString());
 
 }
 
@@ -31,7 +31,7 @@ void setupUtiliteKill::actionApply(){
     QSettings conf(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)+"/qnetstatview.ini", QSettings::IniFormat);
     conf.setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
 
-    conf.setValue("General/prockill",ui->lineEdit->text());
+    conf.setValue("setup/prockill",ui->lineEdit->text());
 
     hide();
 }

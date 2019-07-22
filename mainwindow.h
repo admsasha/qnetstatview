@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QHostInfo>
 #include <QVector>
+#include <QSettings>
 
 #include "cNetStat.h"
 #include "setupUtiliteKill.h"
@@ -29,6 +30,8 @@ class MainWindow : public QMainWindow{
         QTimer *timerUpdate;
         cNetStat *netstat;
         QMenu *menu;
+
+        QSettings *conf;
 
         int sortcol;
 

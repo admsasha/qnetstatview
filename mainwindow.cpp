@@ -11,6 +11,7 @@
 #include <QMessageBox>
 #include <QSettings>
 #include <QDir>
+#include <QStandardPaths>
 
 #include "FormAbout.h"
 #include "config_qnetstatview.h"
@@ -26,6 +27,9 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     // date start 19.02.2013
     this->setWindowTitle(QString("QNetStatView  %1 (%2)").arg(QNETSTATVIEW_VERSION).arg(QNETSTATVIEW_DATEBUILD));
     this->setWindowIcon(QIcon(QString(PATH_USERDATA)+"/images/qnetstatview.png"));
+
+    conf =  new QSettings(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)+"/qnetstatview.ini", QSettings::IniFormat);
+    conf->setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
 
 
     // Создание ContextMenu
@@ -78,6 +82,7 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     ui->tableWidget->setContextMenuPolicy( Qt::CustomContextMenu );
     ui->tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
+    // default value
     ui->tableWidget->setColumnWidth(1,41);
     ui->tableWidget->setColumnWidth(2,160);
     ui->tableWidget->setColumnWidth(3,160);
@@ -117,10 +122,73 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     timerUpdate->start(3000);
 
 
+    // restore from config
+    this->resize(conf->value("form/width",this->width()).toInt(),conf->value("form/height",this->height()).toInt());
+
+    for (int tableCol=1;tableCol<ui->tableWidget->columnCount();tableCol++){
+        ui->tableWidget->setColumnWidth(tableCol,conf->value("tableWidget/column"+QString::number(tableCol),ui->tableWidget->columnWidth(tableCol)).toInt());
+    }
+
+    ui->actionResolve_Addresses->setChecked(conf->value("view/resolve","false").toBool());
+    ui->actionTCP->setChecked(conf->value("view/TCP","true").toBool());
+    ui->actionUDP->setChecked(conf->value("view/UDP","true").toBool());
+    ui->actionTCP6->setChecked(conf->value("view/TCP6","true").toBool());
+    ui->actionUDP6->setChecked(conf->value("view/UDP6","true").toBool());
+
+    ui->actionLISTEN->setChecked(conf->value("view/status_listen","true").toBool());
+    ui->actionESTABLISHED->setChecked(conf->value("view/status_established","true").toBool());
+    ui->actionCLOSE->setChecked(conf->value("view/status_close","true").toBool());
+    ui->actionAllOther->setChecked(conf->value("view/status_other","true").toBool());
+
+
+    int speed = conf->value("setup/speed",3).toInt();
+    switch (speed) {
+        case 0:
+            timer_pause();
+            break;
+        case 1:
+            timer_speed1();
+            break;
+        case 5:
+            timer_speed5();
+            break;
+        default:
+            timer_speed3();
+            break;
+    }
 
 }
 
 MainWindow::~MainWindow(){
+    timerUpdate->stop();
+
+    conf->setValue("form/width",this->width());
+    conf->setValue("form/height",this->height());
+
+    for (int tableCol=1;tableCol<ui->tableWidget->columnCount();tableCol++){
+        conf->setValue("tableWidget/column"+QString::number(tableCol),ui->tableWidget->columnWidth(tableCol));
+    }
+
+    conf->setValue("view/resolve",ui->actionResolve_Addresses->isChecked());
+
+    conf->setValue("view/TCP",ui->actionTCP->isChecked());
+    conf->setValue("view/UDP",ui->actionUDP->isChecked());
+    conf->setValue("view/TCP6",ui->actionTCP6->isChecked());
+    conf->setValue("view/UDP6",ui->actionUDP6->isChecked());
+
+    conf->setValue("view/status_listen",ui->actionLISTEN->isChecked());
+    conf->setValue("view/status_established",ui->actionESTABLISHED->isChecked());
+    conf->setValue("view/status_close",ui->actionCLOSE->isChecked());
+    conf->setValue("view/status_other",ui->actionAllOther->isChecked());
+
+    int speed=3;
+    if (ui->actionPause->isChecked()) speed=0;
+    if (ui->action1_second->isChecked()) speed=1;
+    if (ui->action5_second->isChecked()) speed=5;
+    conf->setValue("setup/speed",speed);
+
+    delete timerUpdate;
+    delete conf;
     delete ui;
 }
 

@@ -52,7 +52,7 @@ void ProcessList::closeConnection(QString from, QString to){
     QSettings conf(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)+"/qnetstatview.ini", QSettings::IniFormat);
     conf.setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
 
-    QString utiliteProcKill=conf.value("General/prockill","").toString();
+    QString utiliteProcKill=conf.value("setup/prockill","").toString();
 
     if (utiliteProcKill==""){
         QMessageBox::critical(0,"closeConnection",QObject::tr("set utilites for kill connections"));
