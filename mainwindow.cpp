@@ -133,7 +133,7 @@ MainWindow::~MainWindow(){
 
 
 void MainWindow::initPopupMenu(){
-    menu = new QMenu("my", 0);
+    menu = new QMenu("my", this);
     menu->addAction(tr("Kill process"), this, SLOT(killProcess()));
     menu->addAction(tr("Close connection"), this, SLOT(closeConnection()));
 
@@ -148,7 +148,7 @@ void MainWindow::killProcess(){
 
 void MainWindow::closeConnection(){
 #if defined(Q_OS_WIN)
-    QMessageBox::critical(0,"closeConnection",tr("Your OS does not support closeConnection"));
+    QMessageBox::critical(this,"closeConnection",tr("Your OS does not support closeConnection"));
     return;
 #endif
 
@@ -156,10 +156,10 @@ void MainWindow::closeConnection(){
         if (ui->tableWidget->item(ui->tableWidget->currentRow(),4)->text() == "ESTABLISHED"){
             ProcessList::closeConnection(ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text().split("/").at(0),ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text().split("/").at(1));
         }else{
-            QMessageBox::critical(0,"closeConnection",tr("Only ESTABLISHED"));
+            QMessageBox::critical(this,"closeConnection",tr("Only ESTABLISHED"));
         }
     }else{
-        QMessageBox::critical(0,"closeConnection",tr("Only root can do this"));
+        QMessageBox::critical(this,"closeConnection",tr("Only root can do this"));
     }
 }
 
