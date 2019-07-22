@@ -67,7 +67,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="76"/>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="77"/>
         <source>prot</source>
         <translation>протокол</translation>
     </message>
@@ -83,26 +83,26 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="77"/>
         <source>state</source>
         <translation>статус</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="96"/>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="77"/>
         <source>pid</source>
         <translation>ид_процесса</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="101"/>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="77"/>
         <source>program</source>
         <oldsource>programm</oldsource>
         <translation>программа</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="106"/>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="77"/>
         <source>cmdline</source>
         <translation>ком_строка</translation>
     </message>
@@ -364,12 +364,12 @@
         <translation type="vanished">Утилита для убиения...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="124"/>
+        <location filename="../mainwindow.cpp" line="198"/>
         <source>Kill process</source>
         <translation>Убить процесс</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="125"/>
+        <location filename="../mainwindow.cpp" line="199"/>
         <source>Close connection</source>
         <translation>Закрыть подключение</translation>
     </message>
@@ -378,52 +378,63 @@
         <translation type="obsolete">Ваша OS не поддерживает закрытие сокета</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="138"/>
         <source>Your OS does not support closeConnection</source>
-        <translation>Ваша OS не поддерживает закрытие сокета</translation>
+        <translation type="vanished">Ваша OS не поддерживает закрытие сокета</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="220"/>
         <source>Only ESTABLISHED</source>
         <translation>Только ESTABLISHED</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="149"/>
+        <location filename="../mainwindow.cpp" line="223"/>
         <source>Only root can do this</source>
         <translation>Только root может сделать это</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="186"/>
+        <location filename="../mainwindow.cpp" line="251"/>
         <source>Save to file</source>
         <translation>Сохранить в файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="186"/>
+        <location filename="../mainwindow.cpp" line="251"/>
         <source>All Files (*.*)</source>
         <translation>Все файлы (*.*)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="77"/>
         <source>local address</source>
         <translation>локальный адрес</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="77"/>
         <source>rem address</source>
         <translation>удалённый адрес</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="212"/>
+        <location filename="../mainwindow.cpp" line="220"/>
+        <location filename="../mainwindow.cpp" line="223"/>
+        <source>close connection</source>
+        <translation>закрыть подключение</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="212"/>
+        <source>Your OS does not support close connection</source>
+        <translation>Ваша OS не поддерживает закрытие подключения</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="476"/>
         <source>Count connections: </source>
         <translation>Количество подключений: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="477"/>
         <source>Count LISTEN: </source>
         <translation>Количество LISTEN: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
+        <location filename="../mainwindow.cpp" line="478"/>
         <source>Count ESTABLISHED: </source>
         <translation>Количество ESTABLISHED: </translation>
     </message>
