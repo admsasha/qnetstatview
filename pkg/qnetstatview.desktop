@@ -2,6 +2,9 @@
 Type=Application
 Name=QNetStatView
 Comment=Shows detailed listings of all TCP and UDP endpoints
+Comment[ru]="Отображает детальный список всех открытых TCP/IP и UDP соединений"
+GenericName=Network monitoring
+GenericName[ru]=Сетевой мониторинг
 Icon=qnetstatview
 Exec=qnetstatview
 Terminal=false
