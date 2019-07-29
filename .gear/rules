@@ -1,2 +1,2 @@
 tar: . name=@name@-@version@
-spec: pkg/qnetstatview.spec
+spec: .gear/qnetstatview.spec
