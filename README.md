@@ -22,4 +22,4 @@ make
 ### Who do I talk to? ###
 
 * email: dik@inbox.ru
-* icq: 234002454
+* www: http://dansoft.ru
