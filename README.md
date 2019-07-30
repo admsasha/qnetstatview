@@ -10,14 +10,8 @@ QNetStatView - program that will show you detailed listings of all TCP and UDP e
 ### How do I get set up? ###
 
 qmake
-
-lrelease qnetstatview.pro
-
-mkdir /usr/share/qnetstatview/
-
-cp *.qm /usr/share/qnetstatview/
-
 make
+make install
 
 ### Who do I talk to? ###
 
