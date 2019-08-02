@@ -1,11 +1,11 @@
 Name:		qnetstatview
-Version:	1.5.1
+Version:	1.5.2
 Release:	alt1
 Summary:	Shows detailed listings of all TCP and UDP endpoints
 Group:		Networking/Other
 License:	GPLv3+
 URL:		http://dansoft.krasnokamensk.ru/more.html?id=1016
-Source0:	%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}.tar
 
 BuildRequires:	qt5-tools
 BuildRequires:	pkgconfig(Qt5Core)
@@ -22,7 +22,7 @@ Shows detailed listings of all TCP and UDP endpoints.
 
 %build
 %qmake_qt5
-%make
+%make_build
 
 %install
 %makeinstall INSTALL_ROOT=%{buildroot}
@@ -35,5 +35,5 @@ Shows detailed listings of all TCP and UDP endpoints.
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
-* Mon Jul 29 2019 Danilov Alexander <admsasha@altlinux.org> 1.5.1-alt1
-- release 1.5.1
+* Fri Aug  2 2019 Alexander Danilov  <admsasha@altlinux.org> 1.5.2-alt1
+- release 1.5.2
