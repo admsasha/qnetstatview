@@ -352,6 +352,31 @@ void MainWindow::timer_pause(){
 
 
 void MainWindow::restartAsRoot(){
+    QString appForEnterRoot = "";
+
+    QStringList possibleApps {"kdesu5","kdesu","gksu"};
+
+    QProcess proc;
+
+    for (QString app:possibleApps){
+        proc.start(app+" --version");
+        if (!proc.waitForFinished()) continue;
+        if (proc.error()!=QProcess::UnknownError) continue;
+        appForEnterRoot=app;
+    }
+
+
+    if (appForEnterRoot=="kdesu5" or appForEnterRoot=="kdesu"){
+        system(QString("kdesu "+QApplication::applicationDirPath()+"/"+qAppName()+" 2> /dev/null &").toStdString().c_str());
+        exit(0);
+    }
+
+    if (appForEnterRoot=="gksu"){
+        system(QString("gksu -u root "+QApplication::applicationDirPath()+"/"+qAppName()+" 2> /dev/null &").toStdString().c_str());
+        exit(0);
+    }
+
+
     DialogPasswordPrompt ps;
     if (ps.exec()){
         QString password = ps.getPassword();
