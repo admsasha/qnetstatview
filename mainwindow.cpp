@@ -12,6 +12,10 @@
 #include <QSettings>
 #include <QDir>
 #include <QStandardPaths>
+#include <QProcess>
+
+#include <unistd.h>
+#include <sys/types.h>
 
 #include "FormAbout.h"
 #include "config_qnetstatview.h"
@@ -91,7 +95,7 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
 
 
 #if defined(Q_OS_LINUX) || defined(Q_OS_UNIX)
-    if (QDir::home().absolutePath()=="/root"){
+    if (getuid()==0){
         ui->actionRestart_as_Root->setVisible(false);
     }
 #elif defined(Q_OS_WIN)
@@ -213,7 +217,7 @@ void MainWindow::closeConnection(){
     return;
 #endif
 
-    if (QDir::home().absolutePath()=="/root"){
+    if (getuid()==0){
         if (ui->tableWidget->item(ui->tableWidget->currentRow(),4)->text() == "ESTABLISHED"){
             ProcessList::closeConnection(ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text().split("/").at(0),ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text().split("/").at(1));
         }else{
@@ -335,8 +339,32 @@ void MainWindow::timer_pause(){
 
 
 void MainWindow::restartAsRoot(){
-    system(QString("kdesu "+QApplication::applicationDirPath()+"/"+qAppName()+" 2> /dev/null &").toStdString().c_str());
-    exit(0);
+    QString appForEnterRoot = "";
+
+    QStringList possibleApps {"kdesu5","kdesu","gksu"};
+
+    QProcess proc;
+
+    for (QString app:possibleApps){
+        proc.start(app+" --version");
+        if (!proc.waitForFinished()) continue;
+        if (proc.error()!=QProcess::UnknownError) continue;
+        appForEnterRoot=app;
+    }
+
+
+    if (appForEnterRoot=="kdesu5" or appForEnterRoot=="kdesu"){
+        system(QString("kdesu "+QApplication::applicationDirPath()+"/"+qAppName()+" 2> /dev/null &").toStdString().c_str());
+        exit(0);
+    }
+
+    if (appForEnterRoot=="gksu"){
+        system(QString("gksu -u root "+QApplication::applicationDirPath()+"/"+qAppName()+" 2> /dev/null &").toStdString().c_str());
+        exit(0);
+    }
+
+    QMessageBox::critical(this,tr("Restart as root"),tr("No program found to go to root. Install kdesu or gksu"));
+
 }
 
 void MainWindow::drawTable(QVector<sNetStat> newNetStat){

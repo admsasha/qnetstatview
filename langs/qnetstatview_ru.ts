@@ -48,7 +48,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="76"/>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="81"/>
         <source>prot</source>
         <translation>протокол</translation>
     </message>
@@ -64,26 +64,26 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="81"/>
         <source>state</source>
         <translation>статус</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="96"/>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="81"/>
         <source>pid</source>
         <translation>ид_процесса</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="101"/>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="81"/>
         <source>program</source>
         <oldsource>programm</oldsource>
         <translation>программа</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="106"/>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="81"/>
         <source>cmdline</source>
         <translation>ком_строка</translation>
     </message>
@@ -175,7 +175,7 @@
     <message>
         <location filename="../mainwindow.ui" line="316"/>
         <source>&amp;Resolve Addresses</source>
-        <translation>&amp;Резольвить адреса</translation>
+        <translation>&amp;Разрешать адреса</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="327"/>
@@ -265,69 +265,79 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="198"/>
+        <location filename="../mainwindow.cpp" line="202"/>
         <source>Kill process</source>
         <translation>Убить процесс</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="199"/>
+        <location filename="../mainwindow.cpp" line="203"/>
         <source>Close connection</source>
         <translation>Закрыть подключение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="220"/>
+        <location filename="../mainwindow.cpp" line="224"/>
         <source>Only ESTABLISHED</source>
         <translation>Только ESTABLISHED</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="223"/>
+        <location filename="../mainwindow.cpp" line="227"/>
         <source>Only root can do this</source>
         <translation>Только root может сделать это</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="251"/>
+        <location filename="../mainwindow.cpp" line="255"/>
         <source>Save to file</source>
         <translation>Сохранить в файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="251"/>
+        <location filename="../mainwindow.cpp" line="255"/>
         <source>All Files (*.*)</source>
         <translation>Все файлы (*.*)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="81"/>
         <source>local address</source>
         <translation>локальный адрес</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="81"/>
         <source>rem address</source>
         <translation>удалённый адрес</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="212"/>
-        <location filename="../mainwindow.cpp" line="220"/>
-        <location filename="../mainwindow.cpp" line="223"/>
+        <location filename="../mainwindow.cpp" line="216"/>
+        <location filename="../mainwindow.cpp" line="224"/>
+        <location filename="../mainwindow.cpp" line="227"/>
         <source>close connection</source>
         <translation>закрыть подключение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="212"/>
+        <location filename="../mainwindow.cpp" line="216"/>
         <source>Your OS does not support close connection</source>
         <translation>Ваша OS не поддерживает закрытие подключения</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="476"/>
+        <location filename="../mainwindow.cpp" line="366"/>
+        <source>Restart as root</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="366"/>
+        <source>No program found to go to root. Install kdesu or gksu</source>
+        <translation>Не найдена программа для перехода в root. Установите kdesu или gksu</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="504"/>
         <source>Count connections: </source>
         <translation>Количество подключений: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="477"/>
+        <location filename="../mainwindow.cpp" line="505"/>
         <source>Count LISTEN: </source>
         <translation>Количество LISTEN: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="478"/>
+        <location filename="../mainwindow.cpp" line="506"/>
         <source>Count ESTABLISHED: </source>
         <translation>Количество ESTABLISHED: </translation>
     </message>
