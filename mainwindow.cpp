@@ -358,7 +358,7 @@ void MainWindow::restartAsRoot(){
 
         int code = system(QString("echo \""+password+"\" | sudo -S -b "+QApplication::applicationDirPath()+"/"+qAppName()+" &> /dev/null").toStdString().c_str());
         if (code!=0){
-            QMessageBox::critical(this,tr("Restart as root"),tr("Application startup failed. The password may have been typed incorrectly. Restart as root canceled"));
+            QMessageBox::critical(this,tr("Restart as root"),tr("Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled"));
         }else{
             this->hide();
             exit(0);

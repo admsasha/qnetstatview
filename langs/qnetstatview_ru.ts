@@ -323,11 +323,6 @@
         <translation>Все файлы (*.*)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="361"/>
-        <source>Application startup failed. The password may have been typed incorrectly. Restart as root canceled</source>
-        <translation>Сбой запуска приложения. Возможно, пароль был введен неправильно. Перезапуск как root отменен</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="93"/>
         <source>local address</source>
         <translation>локальный адрес</translation>
@@ -353,6 +348,11 @@
         <location filename="../mainwindow.cpp" line="361"/>
         <source>Restart as root</source>
         <translation>Перезапустить как root</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="361"/>
+        <source>Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled</source>
+        <translation>Сбой запуска приложения. Возможно, пароль был введен неправильно или вы не находитесь в sudoers файле. Перезапуск как root отменен</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="503"/>
