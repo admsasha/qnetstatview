@@ -13,6 +13,7 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <QProcess>
+#include <QStyledItemDelegate>
 
 #include <unistd.h>
 #include <sys/types.h>
@@ -22,6 +23,15 @@
 
 Q_DECLARE_METATYPE(QVector<sNetStat>)
 
+class elideLeftItemC : public QStyledItemDelegate
+{
+    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
+    {
+        QStyleOptionViewItem opt = option;
+        opt.textElideMode=Qt::ElideLeft;
+        QStyledItemDelegate::paint(painter, opt, index);
+    }
+} elideLeftItem;
 
 MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::MainWindow){
     ui->setupUi(this);
@@ -77,6 +87,7 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     ui->tableWidget->setColumnCount(8);
     ui->tableWidget->sortByColumn(1);
     ui->tableWidget->setColumnHidden(0,true);
+    ui->tableWidget->setItemDelegateForColumn(6, &elideLeftItem);
 
     ui->tableWidget->setHorizontalHeaderLabels(QStringList() << "" << tr("prot") << tr("local address") << tr("rem address") << tr("state") << tr("pid") << tr("program") << tr("cmdline"));
 
