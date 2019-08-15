@@ -2,6 +2,34 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
+    <name>DialogPasswordPrompt</name>
+    <message>
+        <location filename="../DialogPasswordPrompt.ui" line="14"/>
+        <source>Password prompt</source>
+        <translation>Запрос пароля</translation>
+    </message>
+    <message>
+        <location filename="../DialogPasswordPrompt.ui" line="42"/>
+        <source>Continue</source>
+        <translation>Продолжить</translation>
+    </message>
+    <message>
+        <location filename="../DialogPasswordPrompt.ui" line="49"/>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
+    </message>
+    <message>
+        <location filename="../DialogPasswordPrompt.ui" line="81"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This action requires &amp;quot;root&amp;quot; user privileges. Enter his password and click &amp;quot;Continue&amp;quot; or click &amp;quot;Cancel&amp;quot; to cancel the transition to the user &amp;quot;root&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>Эта операция требует привилегий root пользователя. Введите свой пароль и нажмите кнопку &quot;Продолжить&quot; или нажмите кнопку &quot;Отмена&quot;, чтобы отменить переход к пользователю &quot;root&quot;</translation>
+    </message>
+    <message>
+        <location filename="../DialogPasswordPrompt.ui" line="103"/>
+        <source>Password:</source>
+        <translation>Пароль:</translation>
+    </message>
+</context>
+<context>
     <name>FormAbout</name>
     <message>
         <location filename="../FormAbout.ui" line="31"/>
@@ -48,7 +76,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="76"/>
-        <location filename="../mainwindow.cpp" line="81"/>
+        <location filename="../mainwindow.cpp" line="93"/>
         <source>prot</source>
         <translation>протокол</translation>
     </message>
@@ -64,26 +92,26 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
-        <location filename="../mainwindow.cpp" line="81"/>
+        <location filename="../mainwindow.cpp" line="93"/>
         <source>state</source>
         <translation>статус</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="96"/>
-        <location filename="../mainwindow.cpp" line="81"/>
+        <location filename="../mainwindow.cpp" line="93"/>
         <source>pid</source>
         <translation>ид_процесса</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="101"/>
-        <location filename="../mainwindow.cpp" line="81"/>
+        <location filename="../mainwindow.cpp" line="93"/>
         <source>program</source>
         <oldsource>programm</oldsource>
         <translation>программа</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="106"/>
-        <location filename="../mainwindow.cpp" line="81"/>
+        <location filename="../mainwindow.cpp" line="93"/>
         <source>cmdline</source>
         <translation>ком_строка</translation>
     </message>
@@ -265,79 +293,79 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="202"/>
+        <location filename="../mainwindow.cpp" line="214"/>
         <source>Kill process</source>
         <translation>Убить процесс</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="203"/>
+        <location filename="../mainwindow.cpp" line="215"/>
         <source>Close connection</source>
         <translation>Закрыть подключение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="224"/>
+        <location filename="../mainwindow.cpp" line="235"/>
         <source>Only ESTABLISHED</source>
         <translation>Только ESTABLISHED</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="227"/>
+        <location filename="../mainwindow.cpp" line="238"/>
         <source>Only root can do this</source>
         <translation>Только root может сделать это</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="255"/>
+        <location filename="../mainwindow.cpp" line="268"/>
         <source>Save to file</source>
         <translation>Сохранить в файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="255"/>
+        <location filename="../mainwindow.cpp" line="268"/>
         <source>All Files (*.*)</source>
         <translation>Все файлы (*.*)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="81"/>
+        <location filename="../mainwindow.cpp" line="361"/>
+        <source>Application startup failed. The password may have been typed incorrectly. Restart as root canceled</source>
+        <translation>Сбой запуска приложения. Возможно, пароль был введен неправильно. Перезапуск как root отменен</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="93"/>
         <source>local address</source>
         <translation>локальный адрес</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="81"/>
+        <location filename="../mainwindow.cpp" line="93"/>
         <source>rem address</source>
         <translation>удалённый адрес</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="216"/>
-        <location filename="../mainwindow.cpp" line="224"/>
-        <location filename="../mainwindow.cpp" line="227"/>
+        <location filename="../mainwindow.cpp" line="228"/>
+        <location filename="../mainwindow.cpp" line="235"/>
+        <location filename="../mainwindow.cpp" line="238"/>
         <source>close connection</source>
         <translation>закрыть подключение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="216"/>
+        <location filename="../mainwindow.cpp" line="228"/>
         <source>Your OS does not support close connection</source>
         <translation>Ваша OS не поддерживает закрытие подключения</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="366"/>
+        <location filename="../mainwindow.cpp" line="361"/>
         <source>Restart as root</source>
-        <translation type="unfinished"></translation>
+        <translation>Перезапустить как root</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="366"/>
-        <source>No program found to go to root. Install kdesu or gksu</source>
-        <translation>Не найдена программа для перехода в root. Установите kdesu или gksu</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="504"/>
+        <location filename="../mainwindow.cpp" line="503"/>
         <source>Count connections: </source>
         <translation>Количество подключений: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="505"/>
+        <location filename="../mainwindow.cpp" line="504"/>
         <source>Count LISTEN: </source>
         <translation>Количество LISTEN: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="505"/>
         <source>Count ESTABLISHED: </source>
         <translation>Количество ESTABLISHED: </translation>
     </message>

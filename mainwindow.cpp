@@ -19,6 +19,7 @@
 #include <sys/types.h>
 
 #include "FormAbout.h"
+#include "DialogPasswordPrompt.h"
 #include "config_qnetstatview.h"
 
 Q_DECLARE_METATYPE(QVector<sNetStat>)
@@ -351,32 +352,18 @@ void MainWindow::timer_pause(){
 
 
 void MainWindow::restartAsRoot(){
-    QString appForEnterRoot = "";
+    DialogPasswordPrompt ps;
+    if (ps.exec()){
+        QString password = ps.getPassword();
 
-    QStringList possibleApps {"kdesu5","kdesu","gksu"};
-
-    QProcess proc;
-
-    for (QString app:possibleApps){
-        proc.start(app+" --version");
-        if (!proc.waitForFinished()) continue;
-        if (proc.error()!=QProcess::UnknownError) continue;
-        appForEnterRoot=app;
+        int code = system(QString("echo \""+password+"\" | sudo -S -b "+QApplication::applicationDirPath()+"/"+qAppName()+" &> /dev/null").toStdString().c_str());
+        if (code!=0){
+            QMessageBox::critical(this,tr("Restart as root"),tr("Application startup failed. The password may have been typed incorrectly. Restart as root canceled"));
+        }else{
+            this->hide();
+            exit(0);
+        }
     }
-
-
-    if (appForEnterRoot=="kdesu5" or appForEnterRoot=="kdesu"){
-        system(QString("kdesu "+QApplication::applicationDirPath()+"/"+qAppName()+" 2> /dev/null &").toStdString().c_str());
-        exit(0);
-    }
-
-    if (appForEnterRoot=="gksu"){
-        system(QString("gksu -u root "+QApplication::applicationDirPath()+"/"+qAppName()+" 2> /dev/null &").toStdString().c_str());
-        exit(0);
-    }
-
-    QMessageBox::critical(this,tr("Restart as root"),tr("No program found to go to root. Install kdesu or gksu"));
-
 }
 
 void MainWindow::drawTable(QVector<sNetStat> newNetStat){
