@@ -19,6 +19,7 @@
 #include <sys/types.h>
 
 #include "FormAbout.h"
+#include "ProcessExplorer.h"
 #include "DialogPasswordPrompt.h"
 #include "config_qnetstatview.h"
 
@@ -211,16 +212,45 @@ MainWindow::~MainWindow(){
 
 void MainWindow::initPopupMenu(){
     menu = new QMenu("my", this);
-    menu->addAction(tr("Kill process"), this, SLOT(killProcess()));
-    menu->addAction(tr("Close connection"), this, SLOT(closeConnection()));
+
+    actionPropertiesProcess = new QAction(tr("Properties..."),menu);
+    connect(actionPropertiesProcess,SIGNAL(triggered()),this,SLOT(PropertiesProcess()));
+
+    actionKillProcess = new QAction(tr("Kill process"),menu);
+    connect(actionKillProcess,SIGNAL(triggered()),this,SLOT(killProcess()));
+
+    actionCloseConnection = new QAction(tr("Close connection"),menu);
+    connect(actionCloseConnection,SIGNAL(triggered()),this,SLOT(closeConnection()));
+
+
+#if defined(Q_OS_LINUX) || defined(Q_OS_UNIX)
+    menu->addAction(actionPropertiesProcess);
+#endif
+    menu->addAction(actionKillProcess);
+    menu->addAction(actionCloseConnection);
+
 
 }
 void MainWindow::popupCustomMenu( const QPoint &pos ){
+    if (ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text().isEmpty()){
+        actionPropertiesProcess->setEnabled(false);
+        actionKillProcess->setEnabled(false);
+    }else{
+        actionPropertiesProcess->setEnabled(true);
+        actionKillProcess->setEnabled(true);
+    }
     menu->popup(ui->tableWidget->mapToGlobal(pos));
 }
 
 void MainWindow::killProcess(){
     ProcessList::killProcess(ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text());
+}
+
+void MainWindow::PropertiesProcess(){
+    int pid = ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text().toInt();
+
+    ProcessExplorer form(pid,this);
+    form.exec();
 }
 
 void MainWindow::closeConnection(){

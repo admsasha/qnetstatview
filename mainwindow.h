@@ -31,6 +31,10 @@ class MainWindow : public QMainWindow{
         cNetStat *netstat;
         QMenu *menu;
 
+        QAction *actionPropertiesProcess;
+        QAction *actionKillProcess;
+        QAction *actionCloseConnection;
+
         QSettings *conf;
 
         int sortcol;
@@ -42,6 +46,7 @@ class MainWindow : public QMainWindow{
     private slots:
         void popupCustomMenu( const QPoint &pos );
         void killProcess();
+        void PropertiesProcess();
         void closeConnection();
 
         void timerUpdate_timeout();

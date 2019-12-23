@@ -97,7 +97,8 @@ SOURCES += main.cpp \
     setupUtiliteKill.cpp \
     ProcessList.cpp \
     FormAbout.cpp \
-    DialogPasswordPrompt.cpp
+    DialogPasswordPrompt.cpp \
+    ProcessExplorer.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -108,10 +109,12 @@ HEADERS += \
     ProcessList.h \
     FormAbout.h \
     config_qnetstatview.h \
-    DialogPasswordPrompt.h
+    DialogPasswordPrompt.h \
+    ProcessExplorer.h
 
 FORMS += \
     mainwindow.ui \
     setupUtiliteKill.ui \
     FormAbout.ui \
-    DialogPasswordPrompt.ui
+    DialogPasswordPrompt.ui \
+    ProcessExplorer.ui
