@@ -15,7 +15,7 @@
 #endif
 
 #if defined(Q_OS_WIN)
-#include <Windows.h>
+#include <windows.h>
 #include <psapi.h>
 #endif
 
@@ -28,13 +28,13 @@ ProcessList::ProcessList(){
 void ProcessList::killProcess(QString pid){
 
     if (pid=="" or pid.toInt()==0){
-        QMessageBox::critical(0,"KillProcess",QObject::tr("You cannot kill this process"));
+        QMessageBox::critical(nullptr,"KillProcess",QObject::tr("You cannot kill this process"));
         return;
     }
 
 #if defined(Q_OS_LINUX) || defined(Q_OS_UNIX)
     if (kill(pid.toInt(),SIGTERM)){
-        QMessageBox::critical(0,"KillProcess",QObject::tr("Killing of process was not successful"));
+        QMessageBox::critical(nullptr,"KillProcess",QObject::tr("Killing of process was not successful"));
     }
 #elif defined(Q_OS_WIN)
     HANDLE tmpHandle = OpenProcess(PROCESS_ALL_ACCESS, TRUE, pid.toInt());
@@ -42,7 +42,7 @@ void ProcessList::killProcess(QString pid){
         TerminateProcess(tmpHandle, 0);
     }
 #else
-    QMessageBox::critical(0,"KillProcess",QObject::tr("Your OS does not support killProcess"));
+    QMessageBox::critical(nullptr,"KillProcess",QObject::tr("Your OS does not support killProcess"));
 #endif
 
 }

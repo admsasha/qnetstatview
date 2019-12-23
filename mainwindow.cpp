@@ -559,8 +559,6 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
     ui->label_2->setText(tr("Count LISTEN: ")+QString::number(listen));
     ui->label_3->setText(tr("Count ESTABLISHED: ")+QString::number(established));
 
-
-    //ui->tableWidget->setColumnWidth(7,345);
 }
 
 void MainWindow::timerUpdate_timeout(){
@@ -572,6 +570,3 @@ void MainWindow::showSetupKill(){
     setupUtiliteKill frm;
     frm.exec();
 }
-
-
-//TerminateProcess(hProcess, 0)
