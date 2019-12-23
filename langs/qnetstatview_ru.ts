@@ -76,7 +76,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="76"/>
-        <location filename="../mainwindow.cpp" line="93"/>
+        <location filename="../mainwindow.cpp" line="94"/>
         <source>prot</source>
         <translation>протокол</translation>
     </message>
@@ -92,26 +92,26 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="91"/>
-        <location filename="../mainwindow.cpp" line="93"/>
+        <location filename="../mainwindow.cpp" line="94"/>
         <source>state</source>
         <translation>статус</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="96"/>
-        <location filename="../mainwindow.cpp" line="93"/>
+        <location filename="../mainwindow.cpp" line="94"/>
         <source>pid</source>
         <translation>ид_процесса</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="101"/>
-        <location filename="../mainwindow.cpp" line="93"/>
+        <location filename="../mainwindow.cpp" line="94"/>
         <source>program</source>
         <oldsource>programm</oldsource>
         <translation>программа</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="106"/>
-        <location filename="../mainwindow.cpp" line="93"/>
+        <location filename="../mainwindow.cpp" line="94"/>
         <source>cmdline</source>
         <translation>ком_строка</translation>
     </message>
@@ -293,81 +293,164 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="214"/>
+        <location filename="../mainwindow.cpp" line="219"/>
         <source>Kill process</source>
         <translation>Убить процесс</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="215"/>
+        <location filename="../mainwindow.cpp" line="222"/>
         <source>Close connection</source>
         <translation>Закрыть подключение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="235"/>
+        <location filename="../mainwindow.cpp" line="265"/>
         <source>Only ESTABLISHED</source>
         <translation>Только ESTABLISHED</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="238"/>
+        <location filename="../mainwindow.cpp" line="268"/>
         <source>Only root can do this</source>
         <translation>Только root может сделать это</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="298"/>
         <source>Save to file</source>
         <translation>Сохранить в файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="298"/>
         <source>All Files (*.*)</source>
         <translation>Все файлы (*.*)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="93"/>
+        <location filename="../mainwindow.cpp" line="94"/>
         <source>local address</source>
         <translation>локальный адрес</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="93"/>
+        <location filename="../mainwindow.cpp" line="94"/>
         <source>rem address</source>
         <translation>удалённый адрес</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="228"/>
-        <location filename="../mainwindow.cpp" line="235"/>
-        <location filename="../mainwindow.cpp" line="238"/>
+        <location filename="../mainwindow.cpp" line="216"/>
+        <source>Properties...</source>
+        <translation>Свойства...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="258"/>
+        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="268"/>
         <source>close connection</source>
         <translation>закрыть подключение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="228"/>
+        <location filename="../mainwindow.cpp" line="258"/>
         <source>Your OS does not support close connection</source>
         <translation>Ваша OS не поддерживает закрытие подключения</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="361"/>
+        <location filename="../mainwindow.cpp" line="416"/>
         <source>Restart as root</source>
         <translation>Перезапустить как root</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="361"/>
+        <location filename="../mainwindow.cpp" line="416"/>
         <source>Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled</source>
         <translation>Сбой запуска приложения. Возможно, пароль был введен неправильно или вы не находитесь в sudoers файле. Перезапуск как root отменен</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="503"/>
+        <location filename="../mainwindow.cpp" line="558"/>
         <source>Count connections: </source>
         <translation>Количество подключений: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="504"/>
+        <location filename="../mainwindow.cpp" line="559"/>
         <source>Count LISTEN: </source>
         <translation>Количество LISTEN: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="505"/>
+        <location filename="../mainwindow.cpp" line="560"/>
         <source>Count ESTABLISHED: </source>
         <translation>Количество ESTABLISHED: </translation>
+    </message>
+</context>
+<context>
+    <name>ProcessExplorer</name>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="14"/>
+        <source>Process explorer</source>
+        <translation>Обозреватель процесса</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="48"/>
+        <source>Close</source>
+        <translation>Закрыть</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="59"/>
+        <source>General</source>
+        <translation>Основное</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="83"/>
+        <source>PPid:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="96"/>
+        <source>Command line:</source>
+        <translation>Командная строка:</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="109"/>
+        <source>Status:</source>
+        <translation>Статус:</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="148"/>
+        <source>Current directory:</source>
+        <translation>Текущая директория:</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="197"/>
+        <source>Path:</source>
+        <translation>Путь:</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="236"/>
+        <source>Pid:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="317"/>
+        <source>Environment</source>
+        <translation>Окружающая среда</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="338"/>
+        <source>Files</source>
+        <translation>Файлы</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="357"/>
+        <source>Handle</source>
+        <translation>Дескриптор</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="362"/>
+        <source>Path</source>
+        <translation>Путь</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="367"/>
+        <source>Pos</source>
+        <translation>Позиция</translation>
+    </message>
+    <message>
+        <location filename="../ProcessExplorer.ui" line="372"/>
+        <source>Flags</source>
+        <translation>Флаги</translation>
     </message>
 </context>
 <context>
