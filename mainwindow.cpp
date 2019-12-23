@@ -232,7 +232,7 @@ void MainWindow::initPopupMenu(){
 
 }
 void MainWindow::popupCustomMenu( const QPoint &pos ){
-    if (ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text().isEmpty()){
+    if (ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text().isEmpty() or ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text()=="0"){
         actionPropertiesProcess->setEnabled(false);
         actionKillProcess->setEnabled(false);
     }else{
