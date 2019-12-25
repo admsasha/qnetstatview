@@ -350,27 +350,25 @@
         <translation>Ваша OS не поддерживает закрытие подключения</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
         <source>Restart as root</source>
-        <translation>Перезапустить как root</translation>
+        <translation type="vanished">Перезапустить как root</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
         <source>Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled</source>
-        <translation>Сбой запуска приложения. Возможно, пароль был введен неправильно или вы не находитесь в sudoers файле. Перезапуск как root отменен</translation>
+        <translation type="vanished">Сбой запуска приложения. Возможно, пароль был введен неправильно или вы не находитесь в sudoers файле. Перезапуск как root отменен</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="558"/>
+        <location filename="../mainwindow.cpp" line="524"/>
         <source>Count connections: </source>
         <translation>Количество подключений: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="559"/>
+        <location filename="../mainwindow.cpp" line="525"/>
         <source>Count LISTEN: </source>
         <translation>Количество LISTEN: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="560"/>
+        <location filename="../mainwindow.cpp" line="526"/>
         <source>Count ESTABLISHED: </source>
         <translation>Количество ESTABLISHED: </translation>
     </message>
@@ -474,6 +472,42 @@
         <location filename="../ProcessList.cpp" line="58"/>
         <source>set utilites for kill connections</source>
         <translation>Установите утилиту для убийтсва подключения</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="42"/>
+        <source>Usage: qnetstatview [options]</source>
+        <translatorcomment>Использование: qnetstatview [опции]</translatorcomment>
+        <translation>Usage: qnetstatview [options]</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="43"/>
+        <source>Shows detailed listings of all TCP and UDP endpoints</source>
+        <translation>Отображает детальный список всех открытых TCP/IP и UDP соединений</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="46"/>
+        <source>Displays this help.</source>
+        <translation>Показать эту справку.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="47"/>
+        <source>Displays version information.</source>
+        <translation>Показать версию программы.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="48"/>
+        <source>Run as root.</source>
+        <translation>Запустить от root.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="91"/>
+        <source>Restart as root</source>
+        <translation>Перезапустить как root</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="91"/>
+        <source>Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled</source>
+        <translation>Сбой запуска приложения. Возможно, пароль был введен неправильно или вы не находитесь в sudoers файле. Перезапуск как root отменен</translation>
     </message>
 </context>
 <context>
