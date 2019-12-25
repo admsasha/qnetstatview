@@ -33,9 +33,10 @@ Shows detailed listings of all TCP and UDP endpoints.
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
+%{_datadir}/polkit-1/actions/org.pkexec.qnetstatview.policy
 
 %changelog
-* Mon Dec 23 2019 Alexander Danilov  <admsasha@altlinux.org> 1.5.4-alt1
+* Thu Dec 26 2019 Alexander Danilov  <admsasha@altlinux.org> 1.5.4-alt1
 - release 1.5.4
 
 * Thu Aug 15 2019 Alexander Danilov  <admsasha@altlinux.org> 1.5.3-alt1

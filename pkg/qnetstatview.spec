@@ -33,4 +33,4 @@ Shows detailed listings of all TCP and UDP endpoints.
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
-
+%{_datadir}/polkit-1/actions/org.pkexec.qnetstatview.policy

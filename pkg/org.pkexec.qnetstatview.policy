@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+
+	<icon_name>qnetstatview</icon_name>
+	<vendor>DanSoft</vendor>
+	<vendor_url>https://bitbucket.org/admsasha/qnetstatview/</vendor_url>
+	<action id="org.freedesktop.policykit.exec">
+
+		<description>Run QNetStatView as root</description>
+		<description xml:lang="cs">Spouštět QNetStatView pod uživatelem root</description>
+		<description xml:lang="cs_CZ">Spustit QNetStatView s právy správce systému (root)</description>
+		<description xml:lang="de">QNetStatView als Root-Benutzer ausführen</description>
+		<description xml:lang="es">Ejecutar QNetStatView como root</description>
+		<description xml:lang="fr">Lancer QNetStatView en tant que super-utilisateur</description>
+		<description xml:lang="hr">Pokreni QNetStatView kao korijenskog korisnika</description>
+		<description xml:lang="hu">QNetStatView futtatása rendszergazdaként</description>
+		<description xml:lang="id">Jalankan QNetStatView sebagai root</description>
+		<description xml:lang="lv">Palaist QNetStatView kā root</description>
+		<description xml:lang="pl">Uruchomienie programu QNetStatView jako administrator</description>
+		<description xml:lang="pt_BR">Rodar QNetStatView como root</description>
+		<description xml:lang="ro">Rulează QNetStatView ca root</description>
+		<description xml:lang="ru">Запустить QNetStatView с правами администратора</description>
+		<description xml:lang="sk">Spustiť QNetStatView ako správca</description>
+		<description xml:lang="sv">Kör QNetStatView som root</description>
+		<description xml:lang="vi">Chạy QNetStatView dưới tư cách siêu quản trị.</description>
+		<description xml:lang="zh">以 root 权限运行 QNetStatView</description>
+
+		<message>Authentication is required to run QNetStatView as root.</message>
+		<message xml:lang="cs_CZ">Pro spuštění QNetStatView s právy správce je třeba ověření.</message>
+		<message xml:lang="fr">Il est nécessaire de s’authentifier pour lancer QNetStatView en tant que super-utilisateur.</message>
+		<message xml:lang="pt_BR">Autenticação é necessária para rodar QNetStatView como root.</message>
+		<message xml:lang="ru">Для запуска QNetStatView с правами администратора требуется аутентификация.</message>
+		<message xml:lang="zh">以 root 权限运行 QNetStatView 需要身份验证.</message>
+
+		<defaults>
+			<allow_any>auth_admin</allow_any>
+			<allow_inactive>auth_admin</allow_inactive>
+			<allow_active>auth_admin</allow_active>
+		</defaults>
+		<annotate key="org.freedesktop.policykit.exec.path">/usr/bin/qnetstatview</annotate>
+		<annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+
+	</action>
+
+</policyconfig>

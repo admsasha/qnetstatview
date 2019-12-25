@@ -382,43 +382,9 @@ void MainWindow::timer_pause(){
 
 
 void MainWindow::restartAsRoot(){
-    QString appForEnterRoot = "";
-
-    QStringList possibleApps {"kdesu5","kdesu","gksu"};
-
-    QProcess proc;
-
-    for (QString app:possibleApps){
-        proc.start(app+" --version");
-        if (!proc.waitForFinished()) continue;
-        if (proc.error()!=QProcess::UnknownError) continue;
-        appForEnterRoot=app;
-    }
-
-
-    if (appForEnterRoot=="kdesu5" or appForEnterRoot=="kdesu"){
-        system(QString("kdesu "+QApplication::applicationDirPath()+"/"+qAppName()+" 2> /dev/null &").toStdString().c_str());
-        exit(0);
-    }
-
-    if (appForEnterRoot=="gksu"){
-        system(QString("gksu -u root "+QApplication::applicationDirPath()+"/"+qAppName()+" 2> /dev/null &").toStdString().c_str());
-        exit(0);
-    }
-
-
-    DialogPasswordPrompt ps;
-    if (ps.exec()){
-        QString password = ps.getPassword();
-
-        int code = system(QString("echo \""+password+"\" | sudo -S -b "+QApplication::applicationDirPath()+"/"+qAppName()+" &> /dev/null").toStdString().c_str());
-        if (code!=0){
-            QMessageBox::critical(this,tr("Restart as root"),tr("Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled"));
-        }else{
-            this->hide();
-            exit(0);
-        }
-    }
+    this->hide();
+    QProcess::startDetached(QApplication::applicationDirPath()+"/"+qAppName(),QStringList() << "--run-as-root");
+    exit(0);
 }
 
 void MainWindow::drawTable(QVector<sNetStat> newNetStat){

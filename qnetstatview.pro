@@ -78,6 +78,10 @@ data_pixmaps.path = /usr/share/pixmaps/
 data_pixmaps.files = images/qnetstatview.png
 INSTALLS += data_pixmaps
 
+polkit.path = /usr/share/polkit-1/actions/
+polkit.files = pkg/org.pkexec.qnetstatview.policy
+INSTALLS += polkit
+
 data_langs.path = $$PATH_USERDATA/langs/
 data_langs.files = langs/*.qm
 INSTALLS += data_langs
