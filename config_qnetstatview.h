@@ -1,7 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define QNETSTATVIEW_VERSION "1.5.4"
+#define QNETSTATVIEW_VERSION "1.5.5"
 #define QNETSTATVIEW_DATEBUILD "26.12.2019"
 
 #endif // CONFIG_H
