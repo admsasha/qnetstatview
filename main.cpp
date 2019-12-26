@@ -51,7 +51,7 @@ void printUsage(){
 void runAsRoot(){
     QString appForEnterRoot = "";
 
-    QStringList possibleApps {"pkexec","kdesu5","kdesu","gksu"};
+    QStringList possibleApps {"kdesu5","kdesu","gksu","pkexec"};
 
     for (QString app:possibleApps){
         if (QStandardPaths::findExecutable(app)!=""){
@@ -61,12 +61,7 @@ void runAsRoot(){
     }
 
     if (appForEnterRoot=="pkexec"){
-        QFile poolkitPolicy("/usr/share/polkit-1/actions/org.pkexec.qnetstatview.policy");
-        if (poolkitPolicy.exists()){
-            system(QString("pkexec  "+QApplication::applicationDirPath()+"/"+qAppName()+" ").toStdString().data());
-        }else{
-            system(QString("pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "+QApplication::applicationDirPath()+"/"+qAppName()+" ").toStdString().data());
-        }
+        system(QString("pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "+QApplication::applicationDirPath()+"/"+qAppName()+" ").toStdString().data());
         exit(0);
     }
 
