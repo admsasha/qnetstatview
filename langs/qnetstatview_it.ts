@@ -351,11 +351,11 @@
     </message>
     <message>
         <source>Restart as root</source>
-        <translation type=Riavvia come root</translation>
+        <translation>Riavvia come root</translation>
     </message>
     <message>
         <source>Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled</source>
-        <translation type=Avvio dell'applicazione non riuscito. La password potrebbe essere stata digitata in modo errato o non si è nel file sudoers. Riavvio come root annullato</translation>
+        <translation>Avvio dell'applicazione non riuscito. La password potrebbe essere stata digitata in modo errato o non si è nel file sudoers. Riavvio come root annullato</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="524"/>
