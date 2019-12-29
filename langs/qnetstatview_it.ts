@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
@@ -365,12 +365,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="525"/>
         <source>Count LISTEN: </source>
-        <translation>Conta in ASCOLTA: </translation>
+        <translation>Conta in ASCOLTO: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="526"/>
         <source>Count ESTABLISHED: </source>
-        <translation>Conte STABILITA: </translation>
+        <translation>Conta STABILITA: </translation>
     </message>
 </context>
 <context>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../main.cpp" line="42"/>
         <source>Usage: qnetstatview [options]</source>
-        <translation>Usage:Utilizzo: qnetstatview [opzioni]</translation>
+        <translation>Utilizzo: qnetstatview [opzioni]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="43"/>
