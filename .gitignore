@@ -35,4 +35,8 @@
 /.qmake.stash
 /langs/*.qm
 /Makefile
+/Makefile.Debug
+/Makefile.Release
+/object_script.qnetstatview.Debug
+/object_script.qnetstatview.Release
 /qnetstatview.pro.user
