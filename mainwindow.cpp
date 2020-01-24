@@ -284,6 +284,12 @@ void MainWindow::showAbout(){
 }
 
 void MainWindow::CopyToClipboard(){
+    if (ui->tableWidget->currentRow()==-1){
+        QMessageBox::critical(this,tr("Copy to clipboard"),tr("First select the line for copying"));
+        return;
+    }
+
+
     QString buffer="";
     QClipboard *clipboard = QApplication::clipboard();
 
@@ -292,6 +298,8 @@ void MainWindow::CopyToClipboard(){
     }
 
     clipboard->setText(buffer);
+
+    QMessageBox::information(this,tr("Copy to clipboard"),tr("Line was successfully copied to the clipboard"));
 }
 
 void MainWindow::CopyToFile(){
