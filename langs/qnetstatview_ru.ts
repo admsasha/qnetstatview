@@ -471,7 +471,7 @@
     <message>
         <location filename="../ProcessList.cpp" line="58"/>
         <source>set utilities for kill connections</source>
-        <translation>Установите утилиту для убийтсва подключения<</translation>
+        <translation>Установите утилиту для убийтсва подключения</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="42"/>

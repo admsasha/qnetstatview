@@ -1,4 +1,4 @@
-﻿﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../DialogPasswordPrompt.ui" line="81"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This action requires &amp;quot;root&amp;quot; user privileges. Enter his password and click &amp;quot;Continue&amp;quot; or click &amp;quot;Cancel&amp;quot; to cancel the transition to the user &amp;quot;root&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Questa azione richiede &amp;quot;root&amp;quot;privilegi dell'utente.Inserire la propria password e cliccare su &amp;quot;Continua&amp;quot;&quot;root&quot;o cliccare &amp;quot;Cancella&amp;quot; per annullare la transizione all'utente user&amp;quot;root&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Questa azione richiede &amp;quot;root&amp;quot;privilegi dell&apos;utente.Inserire la propria password e cliccare su &amp;quot;Continua&amp;quot;&quot;root&quot;o cliccare &amp;quot;Cancella&amp;quot; per annullare la transizione all&apos;utente user&amp;quot;root&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../DialogPasswordPrompt.ui" line="103"/>
@@ -303,22 +303,22 @@
         <translation>Chiudi connessione</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="267"/>
         <source>Only ESTABLISHED</source>
         <translation>Solo STABILITA</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>Only root can do this</source>
         <translation>Solo root può fare questo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>Save to file</source>
         <translation>Salva su file</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>All Files (*.*)</source>
         <translation>Tutti i File (*.*)</translation>
     </message>
@@ -338,37 +338,37 @@
         <translation>Proprietà...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="258"/>
-        <location filename="../mainwindow.cpp" line="265"/>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>close connection</source>
         <translation>connessione chiusa</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="258"/>
+        <location filename="../mainwindow.cpp" line="260"/>
         <source>Your OS does not support close connection</source>
         <translation>Il tuo sistema Operativo non supporta una stretta connessione</translation>
     </message>
     <message>
         <source>Restart as root</source>
-        <translation>Riavvia come root</translation>
+        <translation type="vanished">Riavvia come root</translation>
     </message>
     <message>
         <source>Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled</source>
-        <translation>Avvio dell'applicazione non riuscito. La password potrebbe essere stata digitata in modo errato o non si è nel file sudoers. Riavvio come root annullato</translation>
+        <translation type="vanished">Avvio dell&apos;applicazione non riuscito. La password potrebbe essere stata digitata in modo errato o non si è nel file sudoers. Riavvio come root annullato</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="524"/>
+        <location filename="../mainwindow.cpp" line="526"/>
         <source>Count connections: </source>
         <translation>Conta connessioni: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="525"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>Count LISTEN: </source>
         <translation>Conta in ASCOLTO: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="528"/>
         <source>Count ESTABLISHED: </source>
         <translation>Conta STABILITA: </translation>
     </message>
@@ -461,7 +461,7 @@
     <message>
         <location filename="../ProcessList.cpp" line="37"/>
         <source>Killing of process was not successful</source>
-        <translation>L'arresto del processo non ha avuto successo</translation>
+        <translation>L&apos;arresto del processo non ha avuto successo</translation>
     </message>
     <message>
         <location filename="../ProcessList.cpp" line="45"/>
@@ -470,7 +470,7 @@
     </message>
     <message>
         <location filename="../ProcessList.cpp" line="58"/>
-        <source>set utilites for kill connections</source>
+        <source>set utilities for kill connections</source>
         <translation>imposta utility per killare connessioni</translation>
     </message>
     <message>
@@ -499,14 +499,14 @@
         <translation>Avvia come root.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="91"/>
+        <location filename="../main.cpp" line="86"/>
         <source>Restart as root</source>
         <translation>Riavvia come root</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="91"/>
+        <location filename="../main.cpp" line="86"/>
         <source>Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled</source>
-        <translation>Avvio dell'applicazione non riuscito. La password potrebbe essere stata digitata in modo errato o non si è nel file sudoers. Riavvio come root annullato</translation>
+        <translation>Avvio dell&apos;applicazione non riuscito. La password potrebbe essere stata digitata in modo errato o non si è nel file sudoers. Riavvio come root annullato</translation>
     </message>
 </context>
 <context>
