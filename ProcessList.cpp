@@ -55,7 +55,7 @@ void ProcessList::closeConnection(QString from, QString to){
     QString utiliteProcKill=conf.value("setup/prockill","").toString();
 
     if (utiliteProcKill==""){
-        QMessageBox::critical(0,"closeConnection",QObject::tr("set utilites for kill connections"));
+        QMessageBox::critical(nullptr,"closeConnection",QObject::tr("set utilities for kill connections"));
     }else{
         QStringList fromList = from.split(":");
         QStringList toList = to.split(":");
