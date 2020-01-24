@@ -70,7 +70,7 @@
     </font>
    </property>
    <property name="text">
-    <string notr="true">Date build: 18.07.2019</string>
+    <string notr="true">Date build: 19.02.2013</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -91,7 +91,7 @@
     </font>
    </property>
    <property name="text">
-    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;© 2013-2019 DanSoft. All rights reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;© 2013-2020 DanSoft. All rights reserved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

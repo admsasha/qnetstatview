@@ -17,7 +17,7 @@ FormAbout::FormAbout(QWidget *parent) :
 
     ui->label_2->setText(tr("Version:")+" "+QString(QNETSTATVIEW_VERSION));
     ui->label_3->setText(tr("Date build:")+" "+QString(QNETSTATVIEW_DATEBUILD));
-    ui->label_4->setText("© 2013-2019 DanSoft. "+tr("All rights reserved."));
+    ui->label_4->setText("© 2013-2020 DanSoft. "+tr("All rights reserved."));
     ui->label_5->setPixmap(QPixmap(QString(PATH_USERDATA)+"/images/qnetstatview.png"));
 
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(close()));
