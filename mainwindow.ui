@@ -152,7 +152,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>29</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -300,7 +300,7 @@
   </action>
   <action name="actionCopy">
    <property name="text">
-    <string>&amp;Copy</string>
+    <string>&amp;Copy to clipboard</string>
    </property>
   </action>
   <action name="actionRestart_as_Root">

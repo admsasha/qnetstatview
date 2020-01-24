@@ -192,8 +192,12 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="303"/>
+        <source>&amp;Copy to clipboard</source>
+        <translation>&amp;Копировать в буфер обмена</translation>
+    </message>
+    <message>
         <source>&amp;Copy</source>
-        <translation>&amp;Копировать</translation>
+        <translation type="vanished">&amp;Копировать</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="308"/>
@@ -313,12 +317,28 @@
         <translation>Только root может сделать это</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
+        <location filename="../mainwindow.cpp" line="288"/>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Copy to clipboard</source>
+        <translation>Копировать в буфер обмена</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="288"/>
+        <source>First select the line for copying</source>
+        <translation>Сперва выберите строчку для копирования</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Line was successfully copied to the clipboard</source>
+        <translation>Строка успешно скопирована в буфер обмена</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="308"/>
         <source>Save to file</source>
         <translation>Сохранить в файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
+        <location filename="../mainwindow.cpp" line="308"/>
         <source>All Files (*.*)</source>
         <translation>Все файлы (*.*)</translation>
     </message>
@@ -358,17 +378,17 @@
         <translation type="vanished">Сбой запуска приложения. Возможно, пароль был введен неправильно или вы не находитесь в sudoers файле. Перезапуск как root отменен</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="534"/>
         <source>Count connections: </source>
         <translation>Количество подключений: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
+        <location filename="../mainwindow.cpp" line="535"/>
         <source>Count LISTEN: </source>
         <translation>Количество LISTEN: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="536"/>
         <source>Count ESTABLISHED: </source>
         <translation>Количество ESTABLISHED: </translation>
     </message>

@@ -192,8 +192,12 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="303"/>
-        <source>&amp;Copy</source>
+        <source>&amp;Copy to clipboard</source>
         <translation>&amp;Kopiuj</translation>
+    </message>
+    <message>
+        <source>&amp;Copy</source>
+        <translation type="vanished">&amp;Kopiuj</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="308"/>
@@ -313,12 +317,28 @@
         <translation>Dla tego działania wymagane są uprawnienia administratora</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
+        <location filename="../mainwindow.cpp" line="288"/>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Copy to clipboard</source>
+        <translation>Kopiuj</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="288"/>
+        <source>First select the line for copying</source>
+        <translation>Najpierw wybierz wiersz do skopiowania</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Line was successfully copied to the clipboard</source>
+        <translation>Ciąg został pomyślnie skopiowany do schowka</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="308"/>
         <source>Save to file</source>
         <translation>Zapisz do pliku</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
+        <location filename="../mainwindow.cpp" line="308"/>
         <source>All Files (*.*)</source>
         <translation>Wszystkie pliki (*.*)</translation>
     </message>
@@ -358,17 +378,17 @@
         <translation type="vanished">Uruchomienie aplikacji nie powiodło się. Być może hasło zostało wprowadzone nieprawidłowo lub nie ma Cię w pliku sudoers. Przerwano ponowne uruchomienie aplikacji na prawach administratora.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="534"/>
         <source>Count connections: </source>
-        <translation>Liczba połączeń:</translation>
+        <translation type="unfinished">Liczba połączeń: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
+        <location filename="../mainwindow.cpp" line="535"/>
         <source>Count LISTEN: </source>
         <translation>Liczba NASŁUCHUJĄCYCH: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="536"/>
         <source>Count ESTABLISHED: </source>
         <translation>Liczba USTANOWIONYCH: </translation>
     </message>
@@ -477,12 +497,12 @@
         <location filename="../main.cpp" line="42"/>
         <source>Usage: qnetstatview [options]</source>
         <translatorcomment>Использование: qnetstatview [опции]</translatorcomment>
-        <translation type="unfinished">Zastosowanie: qnetstatview [opcje]</translation>
+        <translation>Zastosowanie: qnetstatview [opcje]</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="43"/>
         <source>Shows detailed listings of all TCP and UDP endpoints</source>
-        <translation>Wyświetla szczegółową listę wszystkich otwartych połączeń TCP / IP i UDP.</translation>
+        <translation>Wyświetla szczegółową listę wszystkich otwartych połączeń TCP / IP i UDP</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="46"/>
@@ -507,7 +527,7 @@
     <message>
         <location filename="../main.cpp" line="86"/>
         <source>Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled</source>
-        <translation>Uruchomienie aplikacji nie powiodło się. Być może hasło zostało wprowadzone nieprawidłowo lub nie ma Cię w pliku sudoers. Przerwano ponowne uruchomienie aplikacji na prawach administratora.</translation>
+        <translation>Uruchomienie aplikacji nie powiodło się. Być może hasło zostało wprowadzone nieprawidłowo lub nie ma Cię w pliku sudoers. Przerwano ponowne uruchomienie aplikacji na prawach administratora</translation>
     </message>
 </context>
 <context>

@@ -192,8 +192,12 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="303"/>
-        <source>&amp;Copy</source>
+        <source>&amp;Copy to clipboard</source>
         <translation>&amp;Copia</translation>
+    </message>
+    <message>
+        <source>&amp;Copy</source>
+        <translation type="vanished">&amp;Copia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="308"/>
@@ -313,12 +317,28 @@
         <translation>Solo root può fare questo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
+        <location filename="../mainwindow.cpp" line="288"/>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Copy to clipboard</source>
+        <translation>Copia</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="288"/>
+        <source>First select the line for copying</source>
+        <translation>Prima selezionare la riga per la copia</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Line was successfully copied to the clipboard</source>
+        <translation>La riga è stata copiata con successo negli appunti</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="308"/>
         <source>Save to file</source>
         <translation>Salva su file</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
+        <location filename="../mainwindow.cpp" line="308"/>
         <source>All Files (*.*)</source>
         <translation>Tutti i File (*.*)</translation>
     </message>
@@ -358,17 +378,17 @@
         <translation type="vanished">Avvio dell&apos;applicazione non riuscito. La password potrebbe essere stata digitata in modo errato o non si è nel file sudoers. Riavvio come root annullato</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="534"/>
         <source>Count connections: </source>
         <translation>Conta connessioni: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
+        <location filename="../mainwindow.cpp" line="535"/>
         <source>Count LISTEN: </source>
         <translation>Conta in ASCOLTO: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="536"/>
         <source>Count ESTABLISHED: </source>
         <translation>Conta STABILITA: </translation>
     </message>
