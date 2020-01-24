@@ -303,22 +303,22 @@
         <translation>Закрыть подключение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="267"/>
         <source>Only ESTABLISHED</source>
         <translation>Только ESTABLISHED</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>Only root can do this</source>
         <translation>Только root может сделать это</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>Save to file</source>
         <translation>Сохранить в файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>All Files (*.*)</source>
         <translation>Все файлы (*.*)</translation>
     </message>
@@ -338,14 +338,14 @@
         <translation>Свойства...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="258"/>
-        <location filename="../mainwindow.cpp" line="265"/>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>close connection</source>
         <translation>закрыть подключение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="258"/>
+        <location filename="../mainwindow.cpp" line="260"/>
         <source>Your OS does not support close connection</source>
         <translation>Ваша OS не поддерживает закрытие подключения</translation>
     </message>
@@ -358,17 +358,17 @@
         <translation type="vanished">Сбой запуска приложения. Возможно, пароль был введен неправильно или вы не находитесь в sudoers файле. Перезапуск как root отменен</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="524"/>
+        <location filename="../mainwindow.cpp" line="526"/>
         <source>Count connections: </source>
         <translation>Количество подключений: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="525"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>Count LISTEN: </source>
         <translation>Количество LISTEN: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="528"/>
         <source>Count ESTABLISHED: </source>
         <translation>Количество ESTABLISHED: </translation>
     </message>
@@ -470,8 +470,8 @@
     </message>
     <message>
         <location filename="../ProcessList.cpp" line="58"/>
-        <source>set utilites for kill connections</source>
-        <translation>Установите утилиту для убийтсва подключения</translation>
+        <source>set utilities for kill connections</source>
+        <translation>Установите утилиту для убийтсва подключения<</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="42"/>
@@ -500,12 +500,12 @@
         <translation>Запустить от root.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="91"/>
+        <location filename="../main.cpp" line="86"/>
         <source>Restart as root</source>
         <translation>Перезапустить как root</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="91"/>
+        <location filename="../main.cpp" line="86"/>
         <source>Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled</source>
         <translation>Сбой запуска приложения. Возможно, пароль был введен неправильно или вы не находитесь в sudoers файле. Перезапуск как root отменен</translation>
     </message>
