@@ -9,3 +9,4 @@ Icon=qnetstatview
 Exec=qnetstatview
 Terminal=false
 Categories=Network;Utility;
+Keywords=network;netstat;tcp;udp;session;
