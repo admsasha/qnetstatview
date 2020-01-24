@@ -51,34 +51,34 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     // Создание ContextMenu
     initPopupMenu();
 
-    connect(ui->tableWidget->horizontalHeader(),SIGNAL(sectionClicked(int)),this,SLOT(tableWidget_sectionClicked(int)));
-    connect(ui->tableWidget, SIGNAL( customContextMenuRequested( const QPoint & ) ), SLOT( popupCustomMenu( const QPoint & ) ) );
+    connect(ui->tableWidget->horizontalHeader(),&QHeaderView::sectionClicked,this,&MainWindow::tableWidget_sectionClicked);
+    connect(ui->tableWidget, &QWidget::customContextMenuRequested, this, &MainWindow::popupCustomMenu );
 
-    connect(ui->actionCopy,SIGNAL(triggered()),this,SLOT(CopyToClipboard()));
-    connect(ui->actionSave_As,SIGNAL(triggered()),this,SLOT(CopyToFile()));
-    connect(ui->actionAbout,SIGNAL(triggered()),this,SLOT(showAbout()));
+    connect(ui->actionCopy,&QAction::triggered,this,&MainWindow::CopyToClipboard);
+    connect(ui->actionSave_As,&QAction::triggered,this,&MainWindow::CopyToFile);
+    connect(ui->actionAbout,&QAction::triggered,this,&MainWindow::showAbout);
 
-    connect(ui->actionRefresh,SIGNAL(triggered()),this,SLOT(timerUpdate_timeout()));
-    connect(ui->actionRestart_as_Root,SIGNAL(triggered()),this,SLOT(restartAsRoot()));
-    connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
+    connect(ui->actionRefresh,&QAction::triggered,this,&MainWindow::timerUpdate_timeout);
+    connect(ui->actionRestart_as_Root,&QAction::triggered,this,&MainWindow::restartAsRoot);
+    connect(ui->actionExit,&QAction::triggered,this,&QWidget::close);
 
-    connect(ui->actionTCP,SIGNAL(triggered()),this,SLOT(timerUpdate_timeout()));
-    connect(ui->actionTCP6,SIGNAL(triggered()),this,SLOT(timerUpdate_timeout()));
-    connect(ui->actionUDP,SIGNAL(triggered()),this,SLOT(timerUpdate_timeout()));
-    connect(ui->actionUDP6,SIGNAL(triggered()),this,SLOT(timerUpdate_timeout()));
+    connect(ui->actionTCP,&QAction::triggered,this,&MainWindow::timerUpdate_timeout);
+    connect(ui->actionTCP6,&QAction::triggered,this,&MainWindow::timerUpdate_timeout);
+    connect(ui->actionUDP,&QAction::triggered,this,&MainWindow::timerUpdate_timeout);
+    connect(ui->actionUDP6,&QAction::triggered,this,&MainWindow::timerUpdate_timeout);
 
-    connect(ui->actionESTABLISHED,SIGNAL(triggered()),this,SLOT(timerUpdate_timeout()));
-    connect(ui->actionLISTEN,SIGNAL(triggered()),this,SLOT(timerUpdate_timeout()));
-    connect(ui->actionCLOSE,SIGNAL(triggered()),this,SLOT(timerUpdate_timeout()));
-    connect(ui->actionAllOther,SIGNAL(triggered()),this,SLOT(timerUpdate_timeout()));
+    connect(ui->actionESTABLISHED,&QAction::triggered,this,&MainWindow::timerUpdate_timeout);
+    connect(ui->actionLISTEN,&QAction::triggered,this,&MainWindow::timerUpdate_timeout);
+    connect(ui->actionCLOSE,&QAction::triggered,this,&MainWindow::timerUpdate_timeout);
+    connect(ui->actionAllOther,&QAction::triggered,this,&MainWindow::timerUpdate_timeout);
 
-    connect(ui->actionUtilite_for_kill,SIGNAL(triggered()),this,SLOT(showSetupKill()));
-    connect(ui->actionResolve_Addresses,SIGNAL(triggered()),this,SLOT(Resolve_Addresses()));
+    connect(ui->actionUtilite_for_kill,&QAction::triggered,this,&MainWindow::showSetupKill);
+    connect(ui->actionResolve_Addresses,&QAction::triggered,this,&MainWindow::Resolve_Addresses);
 
-    connect(ui->action1_second,SIGNAL(triggered()),this,SLOT(timer_speed1()));
-    connect(ui->action3_second,SIGNAL(triggered()),this,SLOT(timer_speed3()));
-    connect(ui->action5_second,SIGNAL(triggered()),this,SLOT(timer_speed5()));
-    connect(ui->actionPause,SIGNAL(triggered()),this,SLOT(timer_pause()));
+    connect(ui->action1_second,&QAction::triggered,this,&MainWindow::timer_speed1);
+    connect(ui->action3_second,&QAction::triggered,this,&MainWindow::timer_speed3);
+    connect(ui->action5_second,&QAction::triggered,this,&MainWindow::timer_speed5);
+    connect(ui->actionPause,&QAction::triggered,this,&MainWindow::timer_pause);
 
 
     ui->tableWidget->clear();
