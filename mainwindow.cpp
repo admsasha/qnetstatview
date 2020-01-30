@@ -401,18 +401,19 @@ void MainWindow::restartAsRoot(){
 void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
     QString key="";
-    QString key_scroll="";
     int horizontalScrollBarIndex = 0;
+    int verticalScrollBarIndex = 0;
     int listen=0;
     int established=0;
     QMap<int,int> oldSizeCols;
 
     if (ui->tableWidget->currentRow()>=0){
         key = ui->tableWidget->item(ui->tableWidget->currentRow(),2)->text() +"+"+ui->tableWidget->item(ui->tableWidget->currentRow(),3)->text();
-        key_scroll = ui->tableWidget->item(ui->tableWidget->verticalScrollBar()->value(),2)->text()+"+"+ui->tableWidget->item(ui->tableWidget->verticalScrollBar()->value(),3)->text();
+        verticalScrollBarIndex = ui->tableWidget->verticalScrollBar()->value();
         horizontalScrollBarIndex = ui->tableWidget->horizontalScrollBar()->value();
     }
     for (int i=0;i<ui->tableWidget->columnCount();i++) oldSizeCols[i]=ui->tableWidget->columnWidth(i);
+
 
     ui->tableWidget->setRowCount(0);
 
@@ -523,17 +524,14 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
 
     // Sorting and restoring the cursor position
-    ui->tableWidget->sortByColumn(sortcol);
+    if (ui->tableWidget->rowCount()>0){
+        ui->tableWidget->sortByColumn(sortcol);
 
-    for (int tableRow=0;tableRow<ui->tableWidget->rowCount();tableRow++){
-        if (key_scroll==ui->tableWidget->item(tableRow,2)->text()+"+"+ui->tableWidget->item(tableRow,3)->text()){
-            ui->tableWidget->verticalScrollBar()->setValue(tableRow);
-        }
-    }
+        ui->tableWidget->verticalScrollBar()->setValue(verticalScrollBarIndex);
 
-    for (int i=0;i<ui->tableWidget->columnCount();i++) ui->tableWidget->setColumnWidth(i,oldSizeCols[i]);
 
-    if (ui->tableWidget->currentRow()>=0){
+        for (int i=0;i<ui->tableWidget->columnCount();i++) ui->tableWidget->setColumnWidth(i,oldSizeCols[i]);
+
         ui->tableWidget->horizontalScrollBar()->setMaximum(ui->tableWidget->columnCount());
         ui->tableWidget->horizontalScrollBar()->setValue(horizontalScrollBarIndex);
     }
