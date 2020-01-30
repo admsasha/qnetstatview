@@ -403,7 +403,6 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
     QString key="";
     QString key_scroll="";
     int horizontalScrollBarIndex = 0;
-    QModelIndex itemIndex;
     int listen=0;
     int established=0;
     QMap<int,int> oldSizeCols;
@@ -412,7 +411,6 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
         key = ui->tableWidget->item(ui->tableWidget->currentRow(),2)->text() +"+"+ui->tableWidget->item(ui->tableWidget->currentRow(),3)->text();
         key_scroll = ui->tableWidget->item(ui->tableWidget->verticalScrollBar()->value(),2)->text()+"+"+ui->tableWidget->item(ui->tableWidget->verticalScrollBar()->value(),3)->text();
         horizontalScrollBarIndex = ui->tableWidget->horizontalScrollBar()->value();
-        itemIndex = ui->tableWidget->currentIndex();
     }
     for (int i=0;i<ui->tableWidget->columnCount();i++) oldSizeCols[i]=ui->tableWidget->columnWidth(i);
 
@@ -526,8 +524,6 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
     // Sorting and restoring the cursor position
     ui->tableWidget->sortByColumn(sortcol);
-
-    if (ui->tableWidget->currentRow()>=0) ui->tableWidget->setCurrentIndex(itemIndex);
 
     for (int tableRow=0;tableRow<ui->tableWidget->rowCount();tableRow++){
         if (key_scroll==ui->tableWidget->item(tableRow,2)->text()+"+"+ui->tableWidget->item(tableRow,3)->text()){
