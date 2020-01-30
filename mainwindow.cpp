@@ -340,10 +340,8 @@ void MainWindow::lookedUp(const QHostInfo &host){
         DNSCache[address.toString()]=host.hostName();
 }
 
-QString MainWindow::resolve(QString ipaddr,QString prot){
-    QString result=ipaddr;
-
-    if (ipaddr.split(":").size()<1) return ipaddr;
+QString MainWindow::resolve(QString ipaddr,const QString &prot){
+    if (ipaddr.split(":").size()!=2) return ipaddr;
     if (ipaddr=="*") return ipaddr;
 
     if (DNSCache[ipaddr.split(":").at(0)] != ""){
@@ -352,7 +350,6 @@ QString MainWindow::resolve(QString ipaddr,QString prot){
     if (ServicesCache[ipaddr.split(":").at(1)+"/"+prot] != ""){
         ipaddr=ipaddr.split(":").at(0)+":"+ServicesCache[ipaddr.split(":").at(1)+"/"+prot];
     }
-
 
     return ipaddr;
 }

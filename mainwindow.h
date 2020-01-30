@@ -25,7 +25,7 @@ class MainWindow : public QMainWindow{
         Ui::MainWindow *ui;
 
         void initPopupMenu();
-        QString resolve(QString ipaddr, QString prot);
+        QString resolve(QString ipaddr, const QString &prot);
 
         QTimer *timerUpdate;
         cNetStat *netstat;
