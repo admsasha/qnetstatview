@@ -405,7 +405,7 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
     int established=0;
     QMap<int,int> oldSizeCols;
 
-    if (ui->tableWidget->currentRow()>0){
+    if (ui->tableWidget->currentRow()>=0){
         key = ui->tableWidget->item(ui->tableWidget->currentRow(),2)->text() +"+"+ui->tableWidget->item(ui->tableWidget->currentRow(),3)->text();
         key_scroll = ui->tableWidget->item(ui->tableWidget->verticalScrollBar()->value(),2)->text()+"+"+ui->tableWidget->item(ui->tableWidget->verticalScrollBar()->value(),3)->text();
     }
