@@ -297,48 +297,53 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="219"/>
+        <location filename="../mainwindow.cpp" line="220"/>
         <source>Kill process</source>
         <translation>Zabij proces</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="222"/>
+        <location filename="../mainwindow.cpp" line="223"/>
         <source>Close connection</source>
         <translation>Zakończ połączenie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="261"/>
+        <source>This function is not implemented for this OS</source>
+        <translation>Ta funkcja nie jest zaimplementowana dla tego systemu operacyjnego</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="268"/>
         <source>Only ESTABLISHED</source>
         <translation>Tylko USTANOWIONE</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>Only root can do this</source>
         <translation>Dla tego działania wymagane są uprawnienia administratora</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="288"/>
-        <location filename="../mainwindow.cpp" line="302"/>
+        <location filename="../mainwindow.cpp" line="289"/>
+        <location filename="../mainwindow.cpp" line="303"/>
         <source>Copy to clipboard</source>
         <translation>Kopiuj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="288"/>
+        <location filename="../mainwindow.cpp" line="289"/>
         <source>First select the line for copying</source>
         <translation>Najpierw wybierz wiersz do skopiowania</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="302"/>
+        <location filename="../mainwindow.cpp" line="303"/>
         <source>Line was successfully copied to the clipboard</source>
         <translation>Ciąg został pomyślnie skopiowany do schowka</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="308"/>
+        <location filename="../mainwindow.cpp" line="309"/>
         <source>Save to file</source>
         <translation>Zapisz do pliku</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="308"/>
+        <location filename="../mainwindow.cpp" line="309"/>
         <source>All Files (*.*)</source>
         <translation>Wszystkie pliki (*.*)</translation>
     </message>
@@ -353,21 +358,20 @@
         <translation>adres zdalny</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="216"/>
+        <location filename="../mainwindow.cpp" line="217"/>
         <source>Properties...</source>
         <translation>Właściwości...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="260"/>
-        <location filename="../mainwindow.cpp" line="267"/>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>close connection</source>
         <translation>Zakończ połączenie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="260"/>
         <source>Your OS does not support close connection</source>
-        <translation>Twój system operacyjny nie obsługuje zamykania połączeń</translation>
+        <translation type="vanished">Twój system operacyjny nie obsługuje zamykania połączeń</translation>
     </message>
     <message>
         <source>Restart as root</source>
@@ -378,17 +382,17 @@
         <translation type="vanished">Uruchomienie aplikacji nie powiodło się. Być może hasło zostało wprowadzone nieprawidłowo lub nie ma Cię w pliku sudoers. Przerwano ponowne uruchomienie aplikacji na prawach administratora.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="534"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Count connections: </source>
         <translation type="unfinished">Liczba połączeń: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="535"/>
+        <location filename="../mainwindow.cpp" line="538"/>
         <source>Count LISTEN: </source>
         <translation>Liczba NASŁUCHUJĄCYCH: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="536"/>
+        <location filename="../mainwindow.cpp" line="539"/>
         <source>Count ESTABLISHED: </source>
         <translation>Liczba USTANOWIONYCH: </translation>
     </message>
@@ -539,12 +543,12 @@
         <translation>Zabij program:</translation>
     </message>
     <message>
-        <location filename="../setupUtiliteKill.ui" line="70"/>
+        <location filename="../setupUtiliteKill.ui" line="40"/>
         <source>Apply</source>
         <translation>Zatwierdź</translation>
     </message>
     <message>
-        <location filename="../setupUtiliteKill.ui" line="33"/>
+        <location filename="../setupUtiliteKill.ui" line="62"/>
         <source>Args for program
  %REMOTE_IP% - Remote IP 
  %REMOTE_PORT% - Remote PORT
@@ -559,13 +563,13 @@
 </translation>
     </message>
     <message>
-        <location filename="../setupUtiliteKill.ui" line="60"/>
+        <location filename="../setupUtiliteKill.ui" line="52"/>
         <location filename="../setupUtiliteKill.cpp" line="11"/>
         <source>Utilite for close connection</source>
         <translation>Narzędzie do zamykania połączeń</translation>
     </message>
     <message>
-        <location filename="../setupUtiliteKill.ui" line="48"/>
+        <location filename="../setupUtiliteKill.ui" line="20"/>
         <source>Cancel</source>
         <translation>Anuluj</translation>
     </message>

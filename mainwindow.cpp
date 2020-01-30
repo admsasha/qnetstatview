@@ -228,14 +228,19 @@ void MainWindow::initPopupMenu(){
     menu->addAction(actionPropertiesProcess);
 #endif
     menu->addAction(actionKillProcess);
+#if defined(Q_OS_LINUX) || defined(Q_OS_UNIX)
     menu->addAction(actionCloseConnection);
+#endif
 
 
 }
 void MainWindow::popupCustomMenu( const QPoint &pos ){
     if (ui->tableWidget->currentRow()==-1) return;
 
-    if (ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text().isEmpty() or ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text()=="0"){
+    QString proc_id = ui->tableWidget->item(ui->tableWidget->currentRow(),5)->text();
+    QString prog = ui->tableWidget->item(ui->tableWidget->currentRow(),6)->text();
+
+    if (proc_id.isEmpty() or proc_id=="0" or prog=="-"){
         actionPropertiesProcess->setEnabled(false);
         actionKillProcess->setEnabled(false);
     }else{
@@ -258,7 +263,7 @@ void MainWindow::PropertiesProcess(){
 
 void MainWindow::closeConnection(){
 #if defined(Q_OS_WIN)
-    QMessageBox::critical(this,tr("close connection"),tr("Your OS does not support close connection"));
+    QMessageBox::critical(this,tr("close connection"),tr("This function is not implemented for this OS"));
     return;
 #else
     if (getuid()==0){
