@@ -93,6 +93,7 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
 
     ui->tableWidget->setHorizontalHeaderLabels(QStringList() << "" << tr("prot") << tr("local address") << tr("rem address") << tr("state") << tr("pid") << tr("program") << tr("cmdline"));
 
+    ui->tableWidget->horizontalScrollBar()->setMaximum(ui->tableWidget->columnCount());
 
     ui->tableWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -401,6 +402,8 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
     QString key="";
     QString key_scroll="";
+    int horizontalScrollBarIndex = 0;
+    QModelIndex itemIndex;
     int listen=0;
     int established=0;
     QMap<int,int> oldSizeCols;
@@ -408,9 +411,10 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
     if (ui->tableWidget->currentRow()>=0){
         key = ui->tableWidget->item(ui->tableWidget->currentRow(),2)->text() +"+"+ui->tableWidget->item(ui->tableWidget->currentRow(),3)->text();
         key_scroll = ui->tableWidget->item(ui->tableWidget->verticalScrollBar()->value(),2)->text()+"+"+ui->tableWidget->item(ui->tableWidget->verticalScrollBar()->value(),3)->text();
+        horizontalScrollBarIndex = ui->tableWidget->horizontalScrollBar()->value();
+        itemIndex = ui->tableWidget->currentIndex();
     }
     for (int i=0;i<ui->tableWidget->columnCount();i++) oldSizeCols[i]=ui->tableWidget->columnWidth(i);
-
 
     ui->tableWidget->setRowCount(0);
 
@@ -523,6 +527,8 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
     // Sorting and restoring the cursor position
     ui->tableWidget->sortByColumn(sortcol);
 
+    if (ui->tableWidget->currentRow()>=0) ui->tableWidget->setCurrentIndex(itemIndex);
+
     for (int tableRow=0;tableRow<ui->tableWidget->rowCount();tableRow++){
         if (key_scroll==ui->tableWidget->item(tableRow,2)->text()+"+"+ui->tableWidget->item(tableRow,3)->text()){
             ui->tableWidget->verticalScrollBar()->setValue(tableRow);
@@ -530,6 +536,11 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
     }
 
     for (int i=0;i<ui->tableWidget->columnCount();i++) ui->tableWidget->setColumnWidth(i,oldSizeCols[i]);
+
+    if (ui->tableWidget->currentRow()>=0){
+        ui->tableWidget->horizontalScrollBar()->setMaximum(ui->tableWidget->columnCount());
+        ui->tableWidget->horizontalScrollBar()->setValue(horizontalScrollBarIndex);
+    }
 
     ui->label->setText(tr("Count connections: ")+QString::number(row));
     ui->label_2->setText(tr("Count LISTEN: ")+QString::number(listen));
@@ -543,6 +554,8 @@ void MainWindow::timerUpdate_timeout(){
 
 
 void MainWindow::showSetupKill(){
+    ui->tableWidget->horizontalScrollBar()->setValue(ui->tableWidget->horizontalScrollBar()->maximum());
+
     setupUtiliteKill frm;
     frm.exec();
 }
