@@ -409,9 +409,10 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
     if (ui->tableWidget->currentRow()>=0){
         key = ui->tableWidget->item(ui->tableWidget->currentRow(),2)->text() +"+"+ui->tableWidget->item(ui->tableWidget->currentRow(),3)->text();
-        verticalScrollBarIndex = ui->tableWidget->verticalScrollBar()->value();
-        horizontalScrollBarIndex = ui->tableWidget->horizontalScrollBar()->value();
     }
+    verticalScrollBarIndex = ui->tableWidget->verticalScrollBar()->value();
+    horizontalScrollBarIndex = ui->tableWidget->horizontalScrollBar()->value();
+
     for (int i=0;i<ui->tableWidget->columnCount();i++) oldSizeCols[i]=ui->tableWidget->columnWidth(i);
 
 
