@@ -446,7 +446,7 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
             if (ui->lineEdit->text()!=rem_address.split(":").at(0) and
                 ui->lineEdit->text()!=local_address.split(":").at(0) and
                 ui->lineEdit->text()!=pid and
-                newNetStat.at(i).process.program.indexOf(ui->lineEdit->text())==-1
+                newNetStat.at(i).process.program.toLower().indexOf(ui->lineEdit->text().toLower())==-1
             ){
                 continue;
             }
