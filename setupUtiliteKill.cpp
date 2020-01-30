@@ -9,7 +9,6 @@ setupUtiliteKill::setupUtiliteKill(QWidget *parent) : QDialog(parent),  ui(new U
     ui->setupUi(this);
 
     this->setWindowTitle(tr("Utilite for close connection"));
-    this->setFixedSize(this->width(),this->height());
     this->setWindowIcon(QIcon(QString(PATH_USERDATA)+"/images/qnetstatview.png"));
 
     connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(hide()));
