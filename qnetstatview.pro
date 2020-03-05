@@ -90,6 +90,9 @@ data_images.path = $$PATH_USERDATA/images
 data_images.files = images/*
 INSTALLS += data_images
 
+data_icons.path = /usr/share/icons/hicolor/
+data_icons.files = pkg/icons/*
+INSTALLS += data_icons
 
 
 # Input
