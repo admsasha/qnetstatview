@@ -8,5 +8,5 @@ GenericName[ru]=Сетевой мониторинг
 Icon=qnetstatview
 Exec=qnetstatview
 Terminal=false
-Categories=Network;Utility;
+Categories=Network;Monitor;
 Keywords=network;netstat;tcp;udp;session;
