@@ -531,6 +531,7 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
     if (ui->tableWidget->rowCount()>0){
         ui->tableWidget->sortByColumn(sortcol,Qt::AscendingOrder);
 
+        ui->tableWidget->verticalScrollBar()->setMaximum(ui->tableWidget->rowCount());
         ui->tableWidget->verticalScrollBar()->setValue(verticalScrollBarIndex);
 
 
