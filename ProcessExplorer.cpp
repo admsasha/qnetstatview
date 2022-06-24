@@ -3,6 +3,7 @@
 
 #include <QFile>
 #include <QDir>
+#include <QRegExp>
 
 ProcessExplorer::ProcessExplorer(int pid, QWidget *parent) :
     QDialog(parent),
@@ -45,7 +46,7 @@ void ProcessExplorer::fillFields(int pid){
     QFile fileCmdLine(procPath+"/cmdline");
     if (fileCmdLine.open(QIODevice::ReadOnly)){
         QByteArray fileContents = fileCmdLine.readAll();
-        fileContents.replace(QChar(0x00)," ");
+        fileContents.replace(char(0x00)," ");
         ui->label_6->setText(fileContents);
         fileCmdLine.close();
     }
@@ -64,7 +65,7 @@ void ProcessExplorer::fillFields(int pid){
     QFile fileEnviron(procPath+"/environ");
     if (fileEnviron.open(QIODevice::ReadOnly)){
         QByteArray fileContents = fileEnviron.readAll();
-        fileContents.replace(QChar(0x00),"\n");
+        fileContents.replace(char(0x00),"\n");
         ui->textEdit->setText(fileContents);
         fileEnviron.close();
     }
@@ -111,14 +112,14 @@ QMap<QString, QString> ProcessExplorer::mapFromFile(QString path){
     }
 
     QByteArray contents = file.readAll();
-    QStringList lines = QString(contents).split(QRegExp("[\r|\n]"));
+    QStringList lines = QString(contents).split(QRegularExpression("[\r|\n]"));
     for (QString line:lines){
         QStringList pairs = line.split(":");
         if (pairs.size()==2){
             QString key=pairs.at(0);
             QString value = pairs.at(1);
-            value.replace(QRegExp("^\\s+"),"");
-            value.replace(QRegExp("\\s+$"),"");
+            value.replace(QRegularExpression("^\\s+"),"");
+            value.replace(QRegularExpression("\\s+$"),"");
 
             result[key]=value;
         }

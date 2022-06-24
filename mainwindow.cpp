@@ -14,6 +14,7 @@
 #include <QStandardPaths>
 #include <QProcess>
 #include <QStyledItemDelegate>
+#include <QRegExp>
 
 #include <unistd.h>
 #include <sys/types.h>
@@ -87,7 +88,7 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     // init tableWidget
     ui->tableWidget->verticalHeader()->hide();
     ui->tableWidget->setColumnCount(8);
-    ui->tableWidget->sortByColumn(1);
+    ui->tableWidget->sortByColumn(1,Qt::AscendingOrder);
     ui->tableWidget->setColumnHidden(0,true);
     ui->tableWidget->setItemDelegateForColumn(6, &elideLeftItem);
 
@@ -127,7 +128,7 @@ MainWindow::MainWindow(QWidget *parent) :    QMainWindow(parent),    ui(new Ui::
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
         QTextStream in(&file);
         while (!in.atEnd()) {
-            QStringList service = in.readLine().split(QRegExp("\\s+"));
+            QStringList service = in.readLine().split(QRegularExpression("\\s+"));
             if (service.size()<2) continue;
             ServicesCache[service.at(1).toUpper()]=service.at(0);
         }
@@ -506,10 +507,10 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
         for (int c=1;c<ui->tableWidget->columnCount();c++){
             if (newNetStat.at(i).operation==1){
-                ui->tableWidget->item(row,c)->setBackgroundColor(QColor(0,255,0));
+                ui->tableWidget->item(row,c)->setBackground(QBrush(QColor(0,255,0)));
             }
             if (newNetStat.at(i).operation==2){
-                ui->tableWidget->item(row,c)->setBackgroundColor(QColor(255,0,0));
+                ui->tableWidget->item(row,c)->setBackground(QBrush(QColor(255,0,0)));
             }
         }
 
@@ -528,7 +529,7 @@ void MainWindow::drawTable(QVector<sNetStat> newNetStat){
 
     // Sorting and restoring the cursor position
     if (ui->tableWidget->rowCount()>0){
-        ui->tableWidget->sortByColumn(sortcol);
+        ui->tableWidget->sortByColumn(sortcol,Qt::AscendingOrder);
 
         ui->tableWidget->verticalScrollBar()->setValue(verticalScrollBarIndex);
 

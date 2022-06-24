@@ -4,7 +4,8 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QProcess>
-
+#include <QRegExp>
+#include <QRegularExpression>
 
 cNetStat::cNetStat(){
 
@@ -52,7 +53,7 @@ QVector<sNetStat> cNetStat::getTable(){
             //("", "sl", "local_address", "rem_address", "st", "tx_queue", "rx_queue", "tr", "tm->when", "retrnsmt", "uid", "timeout", "inode", "")
             //("", "18:", "4B80A8C0:DA90", "5480A8C0:008B", "01", "00000000:00000000", "02:000A6A42", "00000000", "500", "0", "7793475", "2", "d6798fc0", "20", "3", "32", "10", "-1", "")
             buf[i] = " "+buf.at(i);
-            QStringList ns = buf.at(i).split(QRegExp("\\s+"));
+            QStringList ns = buf.at(i).split(QRegularExpression("\\s+"));
 
             netstat.prot=prots.at(p).toUpper();
             netstat.local_address=convAddress(ns.at(2),netstat.prot);

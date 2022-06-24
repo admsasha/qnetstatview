@@ -3,7 +3,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
-
+#include <QRegExp>
 
 ProcessListLinux::ProcessListLinux(){
 

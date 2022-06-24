@@ -15,6 +15,10 @@ RCC_DIR = .build
 DESTDIR = Bin
 QT += network widgets
 
+greaterThan(QT_VERSION, 6){
+    QT += core5compat
+}
+
 RESOURCES += qnetstatview.qrc
 
 isEmpty(PATH_USERDATA){
@@ -48,6 +52,7 @@ isEmpty(QMAKE_LRELEASE) {
     else:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]/lrelease
     unix {
         !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease-qt5 }
+        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease-qt6 }
     } else {
         !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease }
     }
