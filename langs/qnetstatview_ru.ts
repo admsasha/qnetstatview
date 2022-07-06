@@ -21,7 +21,7 @@
     <message>
         <location filename="../DialogPasswordPrompt.ui" line="81"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This action requires &amp;quot;root&amp;quot; user privileges. Enter his password and click &amp;quot;Continue&amp;quot; or click &amp;quot;Cancel&amp;quot; to cancel the transition to the user &amp;quot;root&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Эта операция требует привилегий root пользователя. Введите свой пароль и нажмите кнопку &quot;Продолжить&quot; или нажмите кнопку &quot;Отмена&quot;, чтобы отменить переход к пользователю &quot;root&quot;</translation>
+        <translation>Эта операция требует привилегий пользователя «root». Введите свой пароль и нажмите кнопку «Продолжить» или нажмите кнопку «Отмена», чтобы отменить переход к пользователю «root»</translation>
     </message>
     <message>
         <location filename="../DialogPasswordPrompt.ui" line="103"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../FormAbout.ui" line="211"/>
         <source>Visit web site</source>
-        <translation>Посетить веб сайт</translation>
+        <translation>Посетить веб-сайт</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="229"/>
@@ -299,7 +299,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="220"/>
         <source>Kill process</source>
-        <translation>Убить процесс</translation>
+        <translation>Прервать процесс</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="223"/>
@@ -330,7 +330,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="289"/>
         <source>First select the line for copying</source>
-        <translation>Сперва выберите строчку для копирования</translation>
+        <translation>Сначала выберите строку для копирования</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="303"/>
@@ -432,7 +432,7 @@
     <message>
         <location filename="../ProcessExplorer.ui" line="148"/>
         <source>Current directory:</source>
-        <translation>Текущая директория:</translation>
+        <translation>Текущий каталог:</translation>
     </message>
     <message>
         <location filename="../ProcessExplorer.ui" line="197"/>
@@ -447,7 +447,7 @@
     <message>
         <location filename="../ProcessExplorer.ui" line="317"/>
         <source>Environment</source>
-        <translation>Окружающая среда</translation>
+        <translation>Окружение</translation>
     </message>
     <message>
         <location filename="../ProcessExplorer.ui" line="338"/>
@@ -480,22 +480,22 @@
     <message>
         <location filename="../ProcessList.cpp" line="31"/>
         <source>You cannot kill this process</source>
-        <translation>Вы не можете убить этот процесс</translation>
+        <translation>Вы не можете прервать этот процесс</translation>
     </message>
     <message>
         <location filename="../ProcessList.cpp" line="37"/>
         <source>Killing of process was not successful</source>
-        <translation>Убийство процесса не прошло успешно</translation>
+        <translation>Прерывание процесса не прошло успешно</translation>
     </message>
     <message>
         <location filename="../ProcessList.cpp" line="45"/>
         <source>Your OS does not support killProcess</source>
-        <translation>Ваша OS не поддерживает убиение процесса</translation>
+        <translation>Ваша ОС не поддерживает прерывание процесса</translation>
     </message>
     <message>
         <location filename="../ProcessList.cpp" line="58"/>
         <source>set utilities for kill connections</source>
-        <translation>Установите утилиту для убийтсва подключения</translation>
+        <translation>Установите утилиту для прерывания подключения</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="42"/>
@@ -506,7 +506,7 @@
     <message>
         <location filename="../main.cpp" line="43"/>
         <source>Shows detailed listings of all TCP and UDP endpoints</source>
-        <translation>Отображает детальный список всех открытых TCP/IP и UDP соединений</translation>
+        <translation>Отображает детальный список всех открытых соединений TCP/IP и UDP</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="46"/>
@@ -531,7 +531,7 @@
     <message>
         <location filename="../main.cpp" line="86"/>
         <source>Application startup failed. The password may have been typed incorrectly or you is not in the sudoers file. Restart as root canceled</source>
-        <translation>Сбой запуска приложения. Возможно, пароль был введен неправильно или вы не находитесь в sudoers файле. Перезапуск как root отменен</translation>
+        <translation>Сбой запуска приложения. Возможно, пароль был введён неправильно или вы не находитесь в файле sudoers. Перезапуск как root отменен</translation>
     </message>
 </context>
 <context>
@@ -556,8 +556,8 @@
  %LOCAL_PORT% - Local PORT
 </source>
         <translation>Аргументы для программы
- %REMOTE_IP% - Удаленный IP 
- %REMOTE_PORT% - Удаленный порт
+ %REMOTE_IP% - Удалённый IP 
+ %REMOTE_PORT% - Удалённый порт
  %LOCAL_IP% - Локальный IP 
  %LOCAL_PORT% - Локальный порт
 </translation>
